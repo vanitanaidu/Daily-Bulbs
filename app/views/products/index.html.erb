@@ -3,13 +3,34 @@
 
   <h1> Our Flower Gallery </h1>
 
-  <% @products.each do |product| %>
-  <br>
-
-  <%= image_tag "flowers/#{rand(9)}.jpg" %>
 
   <br>
-  <% end %>
+
+
+  <table style="width:100%">
+
+    <tr>
+      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
+      <td><%= image_tag("flowers/#{rand(9)}.jpg") %> </td>
+      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
+    </tr>
+    <tr>
+      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
+      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
+      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
+    </tr>
+
+    <tr>
+      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
+      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
+      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
+    </tr>
+  </table>
+
+
+
+  <br>
+
 
 
 

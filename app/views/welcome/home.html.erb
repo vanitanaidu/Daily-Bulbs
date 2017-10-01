@@ -11,7 +11,7 @@
       <% @products.each do |product| %>
       <br>
 
-        <%= image_tag "flowers/#{rand(5)}.jpg" %>
+        <%= image_tag "flowers/#{rand(9)}.jpg" %>
         <br>
         <%= product.name %> (<%= product.date_delivered ? product.delivery_date : "" %>)
         <br>
