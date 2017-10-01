@@ -2,23 +2,35 @@
 
 
   <h1> Welcome to Flower Picks </h1>
-
-
   <h2> Flower picks in the past </h2>
 
+  <br></br>
+  <%= image_tag "flowers/#{rand(9)}.jpg" %>
+  <br>
+  <%= @products.first.name %> (<%= @products.first.date_delivered ? @products.first.delivery_date : "" %>)
+  <%= @products.first.description %>
+  <br></br>
+  <br></br>
 
-      <br>
+  <%= image_tag "flowers/#{rand(9)}.jpg" %>
+  <br>
+  <%= @products.second.name %> (<%= @products.second.date_delivered ? @products.second.delivery_date : "" %>)
+  <%= @products.second.description %>
+  <br></br>
+
+  <a href="url">More past flowers</a>
+
+      <!-- <br>
       <% @products.each do |product| %>
-      <br>
-
-        <%= image_tag "flowers/#{rand(9)}.jpg" %>
+      <br> -->
+        <!-- <%= image_tag "flowers/#{rand(9)}.jpg" %>
         <br>
         <%= product.name %> (<%= product.date_delivered ? product.delivery_date : "" %>)
         <br>
         <%= product.description %>
         <br>
         <br>
-    <% end %>
+    <% end %> -->
 
 
 </body>
