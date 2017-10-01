@@ -1,0 +1,16 @@
+<body class=center>
+
+
+  <h1> Our Flower Gallery </h1>
+
+  <% @products.each do |product| %>
+  <br>
+
+  <%= image_tag "flowers/#{rand(9)}.jpg" %>
+
+  <br>
+  <% end %>
+
+
+
+</body>

@@ -1,0 +1,76 @@
+
+<body class=center>
+
+    <h3> Delivery Address </h3>
+
+
+    <%= form_for user, :url => user_addresses_path(user), method: :post do |f| %>
+
+      <%= f.fields_for :addresses do |address| %>
+
+        <% if !address.object.id.present? %>
+          <%= address.hidden_field :address_type %>
+
+
+          <%= render partial: "form_errors", locals: {form: address} %>
+
+
+          <label><%= address.object.address_type %></label>
+          <fieldset>
+            <p>
+              <%= address.label :street_1 %>
+              <%= address.text_field :street_1 %>
+            </p>
+
+            <p>
+              <%= address.label :street_2 %>
+              <%= address.text_field :street_2 %>
+            </p>
+
+            <p>
+              <%= address.label :city %>
+              <%= address.text_field :city %>
+            </p>
+
+            <p>
+              <%= address.label :state %>
+              <%= address.text_field :state %>
+            </p>
+
+            <p>
+              <%= address.label :zip_code %>
+              <%= address.text_field :zip_code %>
+            </p>
+          </fieldset>
+        <% end %>
+      <% end %>
+
+
+      <%= f.fields_for :messages do |message| %>
+
+        <% if !message.object.id.present? %>
+          <label> Message to Recipient </label>
+          <fieldset>
+
+
+        <%= render partial: "form_errors", locals: {form: message} %>
+
+
+            <p>
+              <%= message.label :content %>
+              <%= message.text_area :content %>
+            </p>
+          </fieldset>
+        <% end %>
+      <% end %>
+
+
+          <%= render partial: "carts/cart", locals: {cart: user.current_cart}  %>
+
+
+      <%= f.submit "Review my Order" %>
+    <% end %>
+
+
+
+</body>

@@ -1,0 +1,37 @@
+<body class=center>
+
+  <%= form_for @product, html: { multipart: true } do |f| %>
+
+    <% if @product.errors.any? %>
+      <div class="field_with_errors">
+        <h2>
+          <%= pluralize(@product.errors.count, "error") %>
+          prevented this product from being created:
+        </h2>
+
+        <ul>
+        <% @product.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+
+  <p> <%= f.label :name, "Name:" %>
+      <%= f.text_field :name %> </p>
+
+
+  <p> <%= f.label :description, "Description:" %>
+      <%= f.text_field :description %> </p>
+
+
+  <p> <%= f.label :date_delivered, "Delivery Day:" %>
+      <%= f.date_field :date_delivered, :value => Time.now.strftime("%B %e, %Y") %> </p>
+
+
+
+  <p> <%= f.submit "Create Flower" %> </p>
+  <% end %>
+</body>

@@ -1,0 +1,34 @@
+
+<body class=center>
+
+<h2> Please Review Your Order </h2>
+
+  <h3> <%= @shipping_add.address_type %>: </h3>
+
+        <p> <%= @shipping_add.street_1.titleize %> </p>
+        <p> <%= @shipping_add.street_2.titleize %> </p>
+        <p> <%= @shipping_add.city.titleize %> </p>
+        <p> <%= @shipping_add.state.titleize %> </p>
+        <p> <%= @shipping_add.zip_code %> </p>
+
+  <h3> <%= @billing_add.address_type %>: </h3>
+
+        <p> <%= @billing_add.street_1.titleize %> </p>
+        <p> <%= @billing_add.street_2.titleize %> </p>
+        <p> <%= @billing_add.city.titleize %> </p>
+        <p> <%= @billing_add.state.titleize %> </p>
+        <p> <%= @billing_add.zip_code %> </p>
+
+
+
+  <h3> Message to Recipient: </h3>
+
+    <p> <%= @message.content.titleize %> </p>
+    <p> <% if @message.content.empty? %> </p>
+      <p> <h3> You have no messages </h3> </p>
+        <% end %>
+
+   <%= button_to 'Place my Order', thank_you_path(current_user), data: { confirm: 'Confirm?' } %>
+
+
+</body>

@@ -1,0 +1,24 @@
+<body class=center>
+
+
+  <h1> Welcome to Flower Picks </h1>
+
+
+  <h2> Flower picks in the past </h2>
+
+
+      <br>
+      <% @products.each do |product| %>
+      <br>
+
+        <%= image_tag "flowers/#{rand(5)}.jpg" %>
+        <br>
+        <%= product.name %> (<%= product.date_delivered ? product.delivery_date : "" %>)
+        <br>
+        <%= product.description %>
+        <br>
+        <br>
+    <% end %>
+
+
+</body>
