@@ -2,10 +2,12 @@ class ProductsController < ApplicationController
 
     def index
       @products = Product.all
+      render json: @products
     end
 
     def new
       @product = Product.new
+      render json: @product
     end
 
     def create
@@ -16,18 +18,21 @@ class ProductsController < ApplicationController
       else
         render :new
       end
+      render json: @product
     end
 
     def show
       @product = Product.find(params[:id])
       @product = Product.date_match
+      render json: @product
+
     end
 
 
       private
 
       def product_params
-        params.require(:product).permit(:name, :description, :date_delivered)
+        params.require(:product).permit(:id, :name, :description, :date_delivered)
       end
 
 end
