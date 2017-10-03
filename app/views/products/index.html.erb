@@ -1,37 +1,29 @@
+
+
+
+
 <body class=center>
 
+<h2> Flower picks in the past </h2> 
 
-  <h1> Our Flower Gallery </h1>
+ <br></br>
+ <%= image_tag "flowers/#{rand(9)}.jpg" %>
+ <br>
+ <%= @products.first.name %> (<%= @products.first.date_delivered ? @products.first.delivery_date : "" %>)
+ <br>
+ <%= @products.first.description %>
+ <br></br>
+ <br></br>
 
+ <%= image_tag "flowers/#{rand(9)}.jpg" %>
+ <br>
+ <%= @products.second.name %> (<%= @products.second.date_delivered ? @products.second.delivery_date : "" %>)
+ <br>
+ <%= @products.second.description %>
+ <br></br>
 
-  <br>
+<div id="past_flowers"></div>
 
-
-  <table style="width:100%">
-
-    <tr>
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %> </td>
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
-    </tr>
-    <tr>
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
-    </tr>
-
-    <tr>
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
-    </tr>
-  </table>
-
-
-
-  <br>
-
-
-
+<button class="js-more_flowers">More past flowers</button>
 
 </body>

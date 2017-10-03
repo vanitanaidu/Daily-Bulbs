@@ -1,13 +1,23 @@
 class ProductsController < ApplicationController
 
+  def home
+    @products = Product.all
+  end
+
     def index
       @products = Product.all
-      render json: @products
+      respond_to do |format|
+        format.html { render :index }
+        format.json { render json: @products}
+      end
     end
 
     def new
       @product = Product.new
-      render json: @product
+      # respond_to do |format|
+      #   format.html { render :new }
+      # end
+      # render json: @product
     end
 
     def create
@@ -18,13 +28,16 @@ class ProductsController < ApplicationController
       else
         render :new
       end
-      render json: @product
     end
 
     def show
-      @product = Product.find(params[:id])
+
       @product = Product.date_match
-      render json: @product
+
+      # respond_to do |format|
+      #   format.html { render :show }
+      # end
+      # render json: @product
 
     end
 

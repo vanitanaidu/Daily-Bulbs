@@ -1,14 +1,18 @@
-function attachListeners() {
-  $("#more_flowers").click(function() {
-    alert("Hello.. this is working")
-  })
 
-}
+
+$(document).ready(function() {
+  $(".js-more_flowers").on("click", function() {
+    moreFlowers()
+  })
+})
 
 function moreFlowers() {
-
-  $.get("/products", function(response) {
-    response
-
+  $.getJSON("/products", function(response) {
+    response.forEach(function(eachArray){
+      name = eachArray["name"]
+      description = eachArray["description"]
+      date = new Date(eachArray["date_delivered"])
+    $("#past_flowers").append("<br>" + `${name}` + ` (${date})`+ "<br>" + `${description}` + "<br></br>")
+    })
   })
 }

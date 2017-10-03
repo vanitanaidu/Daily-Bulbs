@@ -2,7 +2,7 @@ class CartsController < ApplicationController
   before_action :set_cart, only: [:checkout, :destroy, :show]
 
   def show
-
+    render json: @cart
   end
 
   def checkout
@@ -11,11 +11,12 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    product = @cart.products
+    @product = @cart.products
     if product
       product.delete_all
     end
     redirect_to cart_path
+    render json: @product
   end
 
     private
