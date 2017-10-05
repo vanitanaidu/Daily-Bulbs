@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
       # respond_to do |format|
       #   format.html { render :new }
       # end
-      # render json: @product
+
     end
 
     def create
@@ -31,13 +31,11 @@ class ProductsController < ApplicationController
     end
 
     def show
-
       @product = Product.date_match
-
       # respond_to do |format|
       #   format.html { render :show }
+      #   format.json { render :errors}
       # end
-      # render json: @product
 
     end
 

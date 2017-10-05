@@ -5,8 +5,9 @@
 
     <%= render partial: "product", locals: {product: @product} %>
 
-    <p> <%= link_to "Click Here", new_line_product_path %>
+    <div class="js-click_to_order"> <%= link_to "Click Here To Order", new_line_product_path %></div>
       <br></br>
+      <div id="textbox"></div>
 
 
 </body>
