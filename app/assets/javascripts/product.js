@@ -26,8 +26,8 @@ function moreFlowers() {
 function order() {
 
   $.get("/line_products/new", function(response) {
-debugger
-  $("#textbox").append(response)
+
+  $("#textbox").html(response)
 
    $(".js-click_to_order").remove()
 })

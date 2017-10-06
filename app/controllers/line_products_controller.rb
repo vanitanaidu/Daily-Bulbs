@@ -4,19 +4,19 @@ class LineProductsController < ApplicationController
     def new
       product = Product.date_match
       @line_product = product.line_products.build
-      respond_to do |format|
-    format.js
-      end
+      render :template => "line_products/error_msg.html.erb", layout: false
     end
 
     def create
       cart = current_user.current_cart ||= Cart.new
       @line_product = cart.add_product(line_params)
       if @line_product.save
-        redirect_to cart_path(current_user.current_cart)
+         redirect_to cart_path(current_user.current_cart)
       else
         render :new
       end
+
+
     end
 
     def show

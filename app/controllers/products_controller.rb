@@ -32,10 +32,6 @@ class ProductsController < ApplicationController
 
     def show
       @product = Product.date_match
-      # respond_to do |format|
-      #   format.html { render :show }
-      #   format.json { render :errors}
-      # end
 
     end
 

@@ -2,7 +2,9 @@ class CartsController < ApplicationController
   before_action :set_cart, only: [:checkout, :destroy, :show]
 
   def show
-
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @cart}
   end
 
   def checkout
