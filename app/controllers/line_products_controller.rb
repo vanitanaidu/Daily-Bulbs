@@ -4,11 +4,9 @@ class LineProductsController < ApplicationController
     def new
       product = Product.date_match
       @line_product = product.line_products.build
-      render :template => "line_products/error_msg.js.erb"
-      # respond_to do |format|
-      #   format.html { render :new }
-      #    format.js { render :template => "line_products/error_msg.js.erb" }
-      # end
+      respond_to do |format|
+    format.js
+      end
     end
 
     def create

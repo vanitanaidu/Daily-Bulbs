@@ -22,13 +22,12 @@ function moreFlowers() {
     })
   })
 }
-
+//
 function order() {
 
   $.get("/line_products/new", function(response) {
-      console.log(response)
-  id = response["id"]
-
+debugger
+  $("#textbox").append(response)
 
    $(".js-click_to_order").remove()
 })
