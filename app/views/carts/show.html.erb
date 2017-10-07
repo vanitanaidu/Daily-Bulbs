@@ -3,9 +3,9 @@
 
 <h1>Your Cart</h1>
 
+  <%= render partial: "cart", locals: {cart: @cart} %>
 
 
-      <div id="add_to_cart"></div>
 
   <%= button_to 'Empty Cart', cart_path(@cart), method: :delete, :data => {:confirm => 'This will empty everything in your cart. Are you sure?'} %>
 

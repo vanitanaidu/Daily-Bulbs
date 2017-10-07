@@ -1,20 +1,16 @@
+// submitting the form via AJAX on the product show page
+
 $(document).on('turbolinks:load', function() {
   attachListeners()
 })
 
 function attachListeners() {
-  $(".js-add_to_cart").on("click", function(e) {
-    addToCart()
+  $(".js-new_line_product").on("submit", function(e) { submitForm()
+    e.preventDefault()
   })
 }
 
 
-function addToCart() {
-  $.post("/line_products", function(response) {
-    debugger
-    $("#add_to_cart").html(response)
-     $(".js-add_to_cart").remove()
-
-  })
-
+function submitForm() {
+debugger
 }
