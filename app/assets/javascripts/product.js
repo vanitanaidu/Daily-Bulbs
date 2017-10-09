@@ -1,5 +1,4 @@
 
-
 $(document).on('turbolinks:load', function() {
   attachListeners()
 })
@@ -9,7 +8,6 @@ function attachListeners() {
   $(".js-click_to_order").on("click", function(e) { order() // loading the form via AJAX on the product show page
     e.preventDefault()
   })
-
 }
 
 function moreFlowers() {
@@ -40,8 +38,8 @@ function order() {
   })
 }
 
-
 function submitForm(form) {
+
   formData = $(form).serialize();
 
   $.ajax({
@@ -60,14 +58,10 @@ function submitForm(form) {
           $("#textbox").remove()
           $("#todays_pick").remove()
           $("#cart_heading").html(`<h1> ${yourCart} <h1>`)
-          var b = $('<input type="submit" name="delete" value="Delete"/>');
-        $("#append_button").append(b);
 
-
-  <%= button_to 'Empty Cart', cart_path(@cart), method: :delete, :data => {:confirm => 'This will empty everything in your cart. Are you sure?'} %>
-
-
-
+        // id = response["cart"]["id"]
+        //
+        //  cartButtons(id)
     }
     , error: function(error){
       var errors = error["responseJSON"]["errors"]
@@ -77,23 +71,13 @@ function submitForm(form) {
     }
   })
 
-  // $.post("/line_products", formData).success(function(response) {
-  //
-  //   quantity = response["quantity"]
-  //   price =  response["product"]["price"]
-  //   grandTotal = quantity * price
-  //
-  //     $("#display_cart").text("Your Cart")
-  //     $("#display_cart").html(`<h3> Quantity: ${quantity}` + " " + "|" + " " + `Price:  $${price}` + " " + "|" + " " + `Grand Total: $${grandTotal}</h3>` + "<br></br>")
-  //     $("#textbox").remove()
-  //  })
-
-
-
-  // .fail(function() {
-  //   $(document).ajaxError(function() {
-  //
-  //   })
-  // })
 
 }
+//
+// function cartButtons(id) {
+//   $.get(`/carts/${id}`, function(response){
+//
+//     $("#testing").html(response)
+//
+// })
+// }

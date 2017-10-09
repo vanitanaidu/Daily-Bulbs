@@ -1,10 +1,16 @@
 class AddressesController < ApplicationController
   helper_method :user
+  # layout '_header', :only => [:index]
 
   def index
-    @shipping_add = user.addresses.find_by(address_type: "Shipping")
-    @billing_add = user.addresses.find_by(address_type: "Billing")
-    @message = user.messages.last
+    # @shipping_add = user.addresses.find_by(address_type: "Shipping")
+    # @billing_add = user.addresses.find_by(address_type: "Billing")
+    # @message = user.messages.last
+    # response = { :shipping_address => @shipping_address, :billing_address => @billing_address, :message => @message }
+    # respond_to do |format|
+    #   format.html { render :index }
+    #   format.json  { render :json => response }
+    # end
   end
 
   def new
@@ -13,15 +19,24 @@ class AddressesController < ApplicationController
     user.messages.build
   end
 
+
   def create
     if user.update(address_params)
-      flash[:notice] = "Your Order Was Successful"
-      redirect_to user_addresses_path(user)
+       flash[:notice] = "Your Order Was Successful"
+    @shipping_add = user.addresses.find_by(address_type: "Shipping")
+    @billing_add = user.addresses.find_by(address_type: "Billing")
+    @message = user.messages.last
+      # redirect_to user_addresses_path(user)
+      # format.json { render :json => { :redirect => user_addresses_path(user) } }
+       render 'addresses/index'
     else
       flash[:error] = "Sorry. Your Order Did Not Go Through"
       render :new
+
     end
   end
+
+
 
     private
 

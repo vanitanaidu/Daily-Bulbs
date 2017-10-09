@@ -4,7 +4,7 @@ class CartsController < ApplicationController
   def show
     respond_to do |format|
       format.html { render :show }
-      format.json { render json: @cart}
+      format.json { render json: @cart, layout: false }
     end
 
   end

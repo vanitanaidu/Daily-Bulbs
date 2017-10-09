@@ -14,7 +14,7 @@ class LineProductsController < ApplicationController
          render json: @line_product
       else
         render :json => { :errors => @line_product.errors.full_messages }, :status => 442
-        # render :template => "line_products/error_msg.html.erb", layout: false  #previously, i just `render :new` here and it would put out the form again and try creating it again. but now since line 7 i am rendering a template, the form gets rendered again but it is expecting a update
+        # render :template => "line_products/error_msg.html.erb", layout: false 
       end
     end
 
