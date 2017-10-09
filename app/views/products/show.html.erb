@@ -1,15 +1,19 @@
 <body class=center>
 
 <br></br>
-<h1> Today's Daily Pick </h1>
+<h1 id="todays_pick"> Today's Daily Pick </h1>
+<div id="cart_heading"></div>
 
     <%= render partial: "product", locals: {product: @product} %>
-<br>
+    <br>
     <button class="js-click_to_order">Click Here To Order</button>
-
     <div id="textbox"></div>
 
+
     <div id="display_cart"> </div>
+    <div id="append_button"></div
+    <br>
+    <div id="error_msg"></div>
 
 
 </body>

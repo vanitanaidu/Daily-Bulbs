@@ -2,7 +2,7 @@
 
 <h1>Your Cart</h1>
 
-  <!-- <%= render partial: "cart", locals: {cart: @cart} %> -->
+  <%= render partial: "cart", locals: {cart: @cart} %>
 
   <%= button_to 'Empty Cart', cart_path(@cart), method: :delete, :data => {:confirm => 'This will empty everything in your cart. Are you sure?'} %>
 
