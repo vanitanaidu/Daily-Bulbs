@@ -1,4 +1,16 @@
 
+var products = []
+
+function Product(name, description, date_delivered) {
+  this.name = name
+  this.description = description
+  this.date_delivered = date_delivered
+}
+
+Product.prototype.render = function() {
+  $("#past_flowers").append("<br>" + `${this.name}` + ` (${this.date_delivered})`+ "<br>" + `${this.description}` + "<br></br>")
+  $(".js-more_flowers").remove()
+}
 
 $(document).on('turbolinks:load', function() {
   attachListeners()
@@ -20,17 +32,18 @@ function moreFlowers() {
       date = eachArray["date_delivered"]
       new_date = new Date(date)
 
-
-      $("#past_flowers").append("<br>" + `${this.name}` + ` (${this.date_delivered})`+ "<br>" + `${this.description}` + "<br></br>")
-      $(".js-more_flowers").remove()
-
+      var product = new Product(name, description, new_date)
+      products.push(product)
     })
+  })
+  products.forEach(function(product) {
+
+    product.render()
   })
 }
 
 // loading the form via AJAX on the product show page
 function order() {
-
   $.get("/line_products/new", function(response) {
     $("#textbox").html(response)
     $(".js-click_to_order").remove()
@@ -53,13 +66,6 @@ function submitForm(form) {
     data: formData,
     success: function(response){
 
-
-      // name = response["product"]["name"]
-      // price = response["product"]["price"]
-      // quantity = response["quantity"]
-      //
-      //      $("#testing").html("<br>" + `Name:${name}` + ` Price: (${price})`+ "<br>" + `Quantity: ${quantity}` + "<br></br>")
-
         id = response["cart"]["id"]
          cartButtons(id)
            $("#textbox").remove()
@@ -78,6 +84,6 @@ function submitForm(form) {
 function cartButtons(id) {
   $("#error_msg").remove()
   $.get(`/carts/${id}`, function(response){
-    $("#testing").html(response)
+    $("#form").html(response)
   })
 }

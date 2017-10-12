@@ -9,7 +9,6 @@ function click() {
 }
 
 function submitAddress(form) {
-
   url = form["action"]
   formData = $(form).serialize();
 
@@ -23,11 +22,17 @@ function submitAddress(form) {
     $("#edit_user_1").hide()
   }
   ,error: function(error){
-    // debugger
-    // var errors = error["responseJSON"]["errors"]
-    // errors.forEach(function(each){
-    //   $("#address_error_msg").html(each)
-    // })
+
+
+    var errors = error["responseJSON"]
+      errors["errors"].forEach(function(each) {
+        $("#address_error_msg").html(each)
+        $("#review_order_button").remove()
+      })
     }
+  })
+  debugger
+  $.get("/users//addresses/new", function(response) {
+
   })
 }
