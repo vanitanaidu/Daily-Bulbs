@@ -1,6 +1,6 @@
 class AddressesController < ApplicationController
   helper_method :user
-  # layout '_header', :only => [:index]
+
 
   def index
     # @shipping_add = user.addresses.find_by(address_type: "Shipping")
@@ -28,11 +28,16 @@ class AddressesController < ApplicationController
     @message = user.messages.last
       # redirect_to user_addresses_path(user)
       # format.json { render :json => { :redirect => user_addresses_path(user) } }
-       render 'addresses/index'
+       render 'addresses/index', layout: false
     else
+      # render :json => { :errors => user.errors.full_messages }, :status => 442
       flash[:error] = "Sorry. Your Order Did Not Go Through"
-      render :new
+      # render partial: '/addresses/form_errors', :locals => {:comment => comment}, :status => 442
+      # binding.pry
+      render :json => { :errors => user.errors.full_messages }, :status => 442
+      # render :new
 
+  # render :view => { :errors => '/addresses/new' }, :status => 442, layout: false
     end
   end
 

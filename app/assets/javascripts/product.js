@@ -1,4 +1,5 @@
 
+
 $(document).on('turbolinks:load', function() {
   attachListeners()
 })
@@ -13,27 +14,31 @@ function attachListeners() {
 function moreFlowers() {
   $.getJSON("/products", function(response) {
     response.forEach(function(eachArray){
+
       name = eachArray["name"]
       description = eachArray["description"]
       date = eachArray["date_delivered"]
       new_date = new Date(date)
 
-      $("#past_flowers").append("<br>" + `${name}` + ` (${new_date})`+ "<br>" + `${description}` + "<br></br>")
+
+      $("#past_flowers").append("<br>" + `${this.name}` + ` (${this.date_delivered})`+ "<br>" + `${this.description}` + "<br></br>")
       $(".js-more_flowers").remove()
+
     })
   })
 }
 
-  // loading the form via AJAX on the product show page
+// loading the form via AJAX on the product show page
 function order() {
+
   $.get("/line_products/new", function(response) {
     $("#textbox").html(response)
     $(".js-click_to_order").remove()
   }).done(function() {
     document.getElementById("new_line_product")
     $("#new_line_product").on('submit', function(e) {
-      submitForm(this)
       e.preventDefault()
+      submitForm(this)
     })
   })
 }
@@ -48,36 +53,31 @@ function submitForm(form) {
     data: formData,
     success: function(response){
 
-        quantity = response["quantity"]
-        price =  response["product"]["price"]
-        grandTotal = quantity * price
 
-        yourCart = "Your Cart"
+      // name = response["product"]["name"]
+      // price = response["product"]["price"]
+      // quantity = response["quantity"]
+      //
+      //      $("#testing").html("<br>" + `Name:${name}` + ` Price: (${price})`+ "<br>" + `Quantity: ${quantity}` + "<br></br>")
 
-          $("#display_cart").html(`<h3> Quantity: ${quantity}` + " " + "|" + " " + `Price:  $${price}` + " " + "|" + " " + `Grand Total: $${grandTotal}</h3>` + "<br></br>")
-          $("#textbox").remove()
-          $("#todays_pick").remove()
-          $("#cart_heading").html(`<h1> ${yourCart} <h1>`)
-
-        // id = response["cart"]["id"]
-        //
-        //  cartButtons(id)
-    }
-    , error: function(error){
+        id = response["cart"]["id"]
+         cartButtons(id)
+           $("#textbox").remove()
+       }
+    ,error: function(error){
       var errors = error["responseJSON"]["errors"]
       errors.forEach(function(each){
         $("#error_msg").html(each)
       })
-    }
+     }
   })
-
-
+      order()
 }
-//
-// function cartButtons(id) {
-//   $.get(`/carts/${id}`, function(response){
-//
-//     $("#testing").html(response)
-//
-// })
-// }
+
+
+function cartButtons(id) {
+  $("#error_msg").remove()
+  $.get(`/carts/${id}`, function(response){
+    $("#testing").html(response)
+  })
+}

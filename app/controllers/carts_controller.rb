@@ -3,10 +3,8 @@ class CartsController < ApplicationController
 
   def show
     respond_to do |format|
-      format.html { render :show }
-      format.json { render json: @cart, layout: false }
+      format.html { render :show, layout: false }
     end
-
   end
 
   def checkout
@@ -16,22 +14,21 @@ class CartsController < ApplicationController
 
   def destroy
     @product = @cart.products
-    if @product
-      @product.delete_all
-    end
-    redirect_to cart_path
-
+      if @product
+        @product.delete_all
+      end
+    redirect_to root_path
   end
 
-    private
+  private
 
-    def cart_params
-      params.require(:cart).permit(:user_id)
-    end
+  def cart_params
+    params.require(:cart).permit(:user_id)
+  end
 
-    def set_cart
-      @cart = current_user.current_cart
-    end
+  def set_cart
+    @cart = current_user.current_cart
+  end
 
 
 end

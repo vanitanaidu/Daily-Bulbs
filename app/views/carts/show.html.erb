@@ -2,9 +2,11 @@
 
 <h1>Your Cart</h1>
 
+
+
   <%= render partial: "cart", locals: {cart: @cart} %>
 
-  <div id="balloon"><%= button_to 'Empty Cart', cart_path(@cart), method: :delete, :data => {:confirm => 'This will empty everything in your cart. Are you sure?'} %></div>
+  <%= button_to 'Empty Cart', cart_path(@cart), method: :delete, :data => {:confirm => 'This will empty everything in your cart. Are you sure?'} %></div>
 
 
   <% if @cart.total != 0 %>

@@ -10,11 +10,11 @@ class LineProductsController < ApplicationController
       cart = current_user.current_cart ||= Cart.new
       @line_product = cart.add_product(line_params)
       if @line_product.save
-        #  redirect_to cart_path(current_user.current_cart)
+
          render json: @line_product
       else
         render :json => { :errors => @line_product.errors.full_messages }, :status => 442
-        # render :template => "line_products/error_msg.html.erb", layout: false 
+
       end
     end
 

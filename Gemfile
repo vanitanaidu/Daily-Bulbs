@@ -36,6 +36,7 @@ gem 'paperclip', '~> 4.2'
 gem 'figaro'
 #to save uploaded images
 
+gem 'handlebars_assets'
 
 
 gem 'omniauth-facebook'

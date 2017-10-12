@@ -7,7 +7,7 @@
     <%= form_for user, :url => user_addresses_path(user), method: :post do |f| %>
 
       <%= f.fields_for :addresses do |address| %>
-
+    <% $add = address.object %>
         <% if !address.object.id.present? %>
           <%= address.hidden_field :address_type %>
 
@@ -53,7 +53,9 @@
           <fieldset>
 
 
+
         <%= render partial: "form_errors", locals: {form: message} %>
+
 
 
             <p>
@@ -72,7 +74,7 @@
     <% end %>
 
 <div id="address_form">
-
+<div id="address_error_msg">
 </div>
 
 </body>
