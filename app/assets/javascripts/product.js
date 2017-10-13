@@ -1,13 +1,15 @@
 
 var products = []
 
-function Product(name, description, date_delivered) {
+function Product(name, description, date_delivered, image) {
   this.name = name
   this.description = description
   this.date_delivered = date_delivered
+
 }
 
 Product.prototype.render = function() {
+
   $("#past_flowers").append("<br>" + `${this.name}` + ` (${this.date_delivered})`+ "<br>" + `${this.description}` + "<br></br>")
   $(".js-more_flowers").remove()
 }
@@ -18,26 +20,36 @@ $(document).on('turbolinks:load', function() {
 
 function attachListeners() {
   $(".js-more_flowers").on("click", function() { moreFlowers() })
-  $(".js-click_to_order").on("click", function(e) { order() // loading the form via AJAX on the product show page
+  $(".js-click_to_order").on("click", function(e) {  // loading the form via AJAX on the product show page
+    order()
     e.preventDefault()
   })
 }
 
 function moreFlowers() {
   $.getJSON("/products", function(response) {
-    response.forEach(function(eachArray){
+    for( i=0; i < response.length; i++)
+      if (i && (i / 1 !== 1)) {
 
-      name = eachArray["name"]
-      description = eachArray["description"]
-      date = eachArray["date_delivered"]
-      new_date = new Date(date)
+        name = response[i]["name"]
+        description = response[i]["description"]
+        date = response[i]["date_delivered"]
 
-      var product = new Product(name, description, new_date)
-      products.push(product)
-    })
+        var m_names = new Array("January", "February", "March",
+                      "April", "May", "June", "July", "August", "September",
+                      "October", "November", "December");
+
+        var d = new Date(date);
+        var curr_date = d.getUTCDate();
+        var curr_month = d.getUTCMonth();
+        var curr_year = d.getUTCFullYear();
+        new_date = (m_names[curr_month] + " " + curr_date + "," + " " + curr_year);
+
+        var product = new Product(name, description, new_date)
+        products.push(product)
+      }
   })
   products.forEach(function(product) {
-
     product.render()
   })
 }
@@ -56,6 +68,7 @@ function order() {
   })
 }
 
+// displaying the form via AJAX on the product show page
 function submitForm(form) {
 
   formData = $(form).serialize();
@@ -65,19 +78,18 @@ function submitForm(form) {
     url: "/line_products",
     data: formData,
     success: function(response){
-
-        id = response["cart"]["id"]
-         cartButtons(id)
-           $("#textbox").remove()
-       }
+      id = response["cart"]["id"]
+       cartButtons(id)
+         $("#textbox").remove()
+    }
     ,error: function(error){
       var errors = error["responseJSON"]["errors"]
       errors.forEach(function(each){
         $("#error_msg").html(each)
       })
-     }
+    }
   })
-      order()
+  order()
 }
 
 

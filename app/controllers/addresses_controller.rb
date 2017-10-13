@@ -23,23 +23,17 @@ class AddressesController < ApplicationController
   def create
     if user.update(address_params)
        flash[:notice] = "Your Order Was Successful"
-    @shipping_add = user.addresses.find_by(address_type: "Shipping")
-    @billing_add = user.addresses.find_by(address_type: "Billing")
-    @message = user.messages.last
-      # redirect_to user_addresses_path(user)
-      # format.json { render :json => { :redirect => user_addresses_path(user) } }
+       @shipping_add = user.addresses.find_by(address_type: "Shipping")
+       @billing_add = user.addresses.find_by(address_type: "Billing")
+       @message = user.messages.last
+
        render 'addresses/index', layout: false
     else
-  
-      flash[:error] = "Sorry. Your Order Did Not Go Through"
 
       render :json => { :errors => user.errors.full_messages }, :status => 442
-
-
-  # render :view => { :errors => '/addresses/new' }, :status => 442, layout: false
+            flash[:error] = "Sorry. Your Order Did Not Go Through. Please key in your address again."
     end
   end
-
 
 
     private

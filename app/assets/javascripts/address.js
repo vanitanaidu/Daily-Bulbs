@@ -3,14 +3,19 @@ $(document).on('turbolinks:load', function() {
 })
 
 function click() {
-  $("#edit_user_1").on("submit", function(e) { submitAddress(this)
+  $("#edit_user_1").on("submit", function(e) {
+    $(this).find(':input[type=submit]').prop('disabled', false)
+    submitAddress(this)
     e.preventDefault()
   })
 }
 
+// displaying the form via AJAX on the addresses new page
 function submitAddress(form) {
-  url = form["action"]
-  formData = $(form).serialize();
+
+  var url = form["action"]
+  var formData = $(form).serialize();
+  var address_url = this["location"]["href"]
 
   $.ajax({
   type: "POST",
@@ -18,21 +23,18 @@ function submitAddress(form) {
   data: formData,
   success: function(response){
 
+    var response = response
+
     $("#address_form").html(response)
-    $("#edit_user_1").hide()
+    $(".edit_user").hide()
   }
   ,error: function(error){
 
-
     var errors = error["responseJSON"]
-      errors["errors"].forEach(function(each) {
-        $("#address_error_msg").html(each)
-        $("#review_order_button").remove()
-      })
-    }
-  })
-  debugger
-  $.get("/users//addresses/new", function(response) {
+    errors["errors"].forEach(function(each) {
+      $("#address_error_msg").html(each)
 
+    })
+  }
   })
 }

@@ -18,7 +18,7 @@
           <label><%= address.object.address_type %></label>
           <fieldset>
             <p>
-              <%= address.label :street_1 %>
+              <%= address.label :street_1 %>*
               <%= address.text_field :street_1 %>
             </p>
 
@@ -28,53 +28,55 @@
             </p>
 
             <p>
-              <%= address.label :city %>
+              <%= address.label :city %>*
               <%= address.text_field :city %>
             </p>
 
             <p>
-              <%= address.label :state %>
+              <%= address.label :state %>*
               <%= address.text_field :state %>
             </p>
 
             <p>
-              <%= address.label :zip_code %>
+              <%= address.label :zip_code %>*
               <%= address.text_field :zip_code %>
             </p>
           </fieldset>
         <% end %>
       <% end %>
-
+      <br></br>
 
       <%= f.fields_for :messages do |message| %>
 
         <% if !message.object.id.present? %>
           <label> Message to Recipient </label>
+
           <fieldset>
 
 
-
         <%= render partial: "form_errors", locals: {form: message} %>
-
-
 
             <p>
               <%= message.label :content %>
               <%= message.text_area :content %>
             </p>
+
           </fieldset>
         <% end %>
       <% end %>
-
-
+        <br></br>
+        * required fields
+        <br></br>
+        <br>
           <%= render partial: "carts/cart", locals: {cart: user.current_cart}  %>
-
+        <br>
 
     <div id="review_order_button">  <%= f.submit "Review my Order" %> </div>
     <% end %>
 
-<div id="address_form">
-<div id="address_error_msg">
+    <div id="address_form">
+    <div id="address_error_msg">
+
 </div>
 
 </body>
