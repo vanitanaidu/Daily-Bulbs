@@ -5,11 +5,9 @@ function Product(name, description, date_delivered, image) {
   this.name = name
   this.description = description
   this.date_delivered = date_delivered
-
 }
 
 Product.prototype.render = function() {
-
   $("#past_flowers").append("<br>" + `${this.name}` + ` (${this.date_delivered})`+ "<br>" + `${this.description}` + "<br></br>")
   $(".js-more_flowers").remove()
 }
@@ -91,7 +89,6 @@ function submitForm(form) {
   })
   order()
 }
-
 
 function cartButtons(id) {
   $("#error_msg").remove()

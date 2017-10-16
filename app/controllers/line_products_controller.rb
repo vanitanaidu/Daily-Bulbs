@@ -10,26 +10,24 @@ class LineProductsController < ApplicationController
       cart = current_user.current_cart ||= Cart.new
       @line_product = cart.add_product(line_params)
       if @line_product.save
-
          render json: @line_product
       else
         render :json => { :errors => @line_product.errors.full_messages }, :status => 442
-
       end
     end
 
     def show
     end
 
-      private
+    private
 
-      def product
-        Product.date_match
-      end
+    def product
+      Product.date_match
+    end
 
-      def line_params
-        params.require(:line_product).permit(:id, :quantity, :product_id)
-      end
+    def line_params
+      params.require(:line_product).permit(:id, :quantity, :product_id)
+    end
 
 
 end
