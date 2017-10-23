@@ -42,7 +42,6 @@ function moreFlowers() {
         var curr_month = d.getUTCMonth();
         var curr_year = d.getUTCFullYear();
         new_date = (m_names[curr_month] + " " + curr_date + "," + " " + curr_year);
-
         var product = new Product(name, description, new_date)
         products.push(product)
       }

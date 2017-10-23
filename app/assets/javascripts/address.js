@@ -4,7 +4,6 @@ $(document).on('turbolinks:load', function() {
 
 function click() {
   $("#edit_user_1").on("submit", function(e) {
-    $(this).find(':input[type=submit]').prop('disabled', false)
     submitAddress(this)
     e.preventDefault()
   })
