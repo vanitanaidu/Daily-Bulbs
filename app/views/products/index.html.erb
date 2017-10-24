@@ -7,6 +7,7 @@
  <br></br>
  <%= image_tag "flowers/#{rand(9)}.jpg" %>
  <br>
+
  <%= @products.first.name %> (<%= @products.first.date_delivered ? @products.first.delivery_date : "" %>)
  <br>
  <%= @products.first.description %>

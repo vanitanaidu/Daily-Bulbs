@@ -5,7 +5,8 @@ class ProductsController < ApplicationController
   end
 
     def index
-      @products = Product.all
+      all_products = Product.all
+      @products = all_products.sort {|x,y| x.date_delivered <=> y.date_delivered }
       respond_to do |format|
         format.html { render :index }
         format.json { render json: @products}

@@ -1,6 +1,3 @@
-
-var products = []
-
 function Product(name, description, date_delivered, image) {
   this.name = name
   this.description = description
@@ -25,29 +22,28 @@ function attachListeners() {
 }
 
 function moreFlowers() {
-  $.getJSON("/products", function(response) {
-    for( i=0; i < response.length; i++)
+  $.getJSON("/products", function(products) {
+
+    // create a variable caslled sorted produts that contains products sorted by their date delivered
+
+    // const sortedProducts = products.sort((a, b) => a.date_delivered - b.date_delivered);
+
+    for( var i = 0; i < products.length; i++)
       if (i && (i / 1 !== 1)) {
-
-        name = response[i]["name"]
-        description = response[i]["description"]
-        date = response[i]["date_delivered"]
-
-        var m_names = new Array("January", "February", "March",
+        var months = new Array("January", "February", "March",
                       "April", "May", "June", "July", "August", "September",
                       "October", "November", "December");
 
-        var d = new Date(date);
-        var curr_date = d.getUTCDate();
-        var curr_month = d.getUTCMonth();
-        var curr_year = d.getUTCFullYear();
-        new_date = (m_names[curr_month] + " " + curr_date + "," + " " + curr_year);
-        var product = new Product(name, description, new_date)
-        products.push(product)
+        const sortedProducts = products.sort((a, b) => a.date_delivered - b.date_delivered);
+
+        var date = new Date(sortedProducts[i].date_delivered);
+        var currentDate = date.getUTCDate();
+        var currentMonth = date.getUTCMonth();
+        var currentYear = date.getUTCFullYear();
+        var formattedDate = (months[currentMonth] + " " + currentDate + "," + " " + currentYear);
+        var product = new Product(products[i].name, products[i].description, formattedDate)
+        product.render()
       }
-  })
-  products.forEach(function(product) {
-    product.render()
   })
 }
 
@@ -75,23 +71,22 @@ function submitForm(form) {
     url: "/line_products",
     data: formData,
     success: function(response){
-      id = response["cart"]["id"]
-       cartButtons(id)
-         $("#textbox").remove()
-    }
-    ,error: function(error){
-      var errors = error["responseJSON"]["errors"]
-      errors.forEach(function(each){
-        $("#error_msg").html(each)
+      var cartID = response["cart"]["id"]
+      cartButtons(cartID)
+      $("#textbox").remove()
+    },
+    error: function(failure){
+      failure.responseJSON.errors.forEach(function(error){
+        $("#error_msg").html(error)
       })
     }
   })
   order()
 }
 
-function cartButtons(id) {
+function cartButtons(cartID) {
   $("#error_msg").remove()
-  $.get(`/carts/${id}`, function(response){
+  $.get(`/carts/${cartID}`, function(response){
     $("#form").html(response)
   })
 }
