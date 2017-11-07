@@ -17,3 +17,6 @@ This app is a online flower store. The user who has an admin role (in real life,
  7. Now sign in using the admin email: `vanita112003@gmail.com` and password : `2801744`
  8. Once you are in signed in, you will be able to view the store just like any guest would. Only difference is you get to add the 'flower of the day'. Go ahead and create the your flower. This is an important step to do or else, the website is not functional.
  9. Once you are done exploring, feel free to sign out and try viewing the website as a guest user. Not much of a difference honestly.. So you could just do all your exploring as an admin.
+
+## Blog 
+ http://vanitanaidueckert.com/do_you_like_javascript

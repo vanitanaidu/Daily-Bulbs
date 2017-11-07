@@ -24,10 +24,6 @@ function attachListeners() {
 function moreFlowers() {
   $.getJSON("/products", function(products) {
 
-    // create a variable caslled sorted produts that contains products sorted by their date delivered
-
-    // const sortedProducts = products.sort((a, b) => a.date_delivered - b.date_delivered);
-
     for( var i = 0; i < products.length; i++)
       if (i && (i / 1 !== 1)) {
         var months = new Array("January", "February", "March",
