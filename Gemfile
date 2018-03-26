@@ -32,12 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'paperclip', '~> 4.2'
-gem 'figaro'
-#to save uploaded images
-
 gem 'handlebars_assets'
-
 
 gem 'omniauth-facebook'
 

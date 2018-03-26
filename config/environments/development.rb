@@ -6,23 +6,6 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
 
 
-    config.paperclip_defaults = {
-      storage: :s3,
-      s3_host_name: 's3-us-east-2.amazonaws.com',
-      s3_credentials: {
-        s3_region:  ENV['AWS_REGION'],
-        bucket: ENV['AWS_S3_BUCKET'],
-        access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-        secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
-      }
-    }
-
-
-
-
-Paperclip.options[:command_path] = "/usr/local/bin/convert"
-
-
   config.cache_classes = false
 
   # Do not eager load code on boot.
