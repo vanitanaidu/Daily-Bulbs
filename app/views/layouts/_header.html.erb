@@ -1,18 +1,23 @@
-<nav class="">
-    <%= render 'layouts/signin' %>
+<ul class="nav">
 
-      <h3> <%= link_to "Home", root_path %> </h3>
-      <h3> <%= link_to "Gallery", products_path %> </h3>
+
+
+
+    <li> <h2> <%= link_to "Home", root_path %> </h2> </li>
+    <li> <h2> <%= link_to "Gallery", products_path %> </h2> </li>
 
       <% if !Product.date_match.nil? %>
-      <h3> <%= link_to "Daily Pick", product_path(Product.date_match) %> </h3>
+    <li> <h3> <%= link_to "Daily Pick", product_path(Product.date_match) %> </h3> </li>
       <% end %>
 
       <% if current_user.try(:admin?) %>
-        <h3> <%= link_to "Add Pick of the Day", new_user_product_path(current_user) %> </h3>
+      <li> <h3> <%= link_to "Add Pick of the Day", new_user_product_path(current_user) %> </h3> </li>
       <% end %>
 
       <% if user_signed_in? && !!current_user.current_cart %>
-        <h3> <%= link_to "Your Cart", cart_path(current_user.current_cart) %> </h3>
+      <li> <h3> <%= link_to "Your Cart", cart_path(current_user.current_cart) %> </h3> </li>
       <% end %>
-</nav>
+
+          <%= render 'layouts/signin' %>
+
+</ul>
