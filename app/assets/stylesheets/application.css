@@ -28,14 +28,12 @@
 
 .center {
     margin: auto;
-    width: 80%;
-    padding: 20px;
-
+    width: 100%;
+    padding-top: 3%;
 }
 
 
 
-.has-signup-error{
   .signup-error{
     background: transparent;
     color: $brand-danger;

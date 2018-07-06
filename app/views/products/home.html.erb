@@ -1,37 +1,32 @@
 <body class=center>
+  <div class="container">
 
 
-    <h1> Welcome to Flower Picks </h1>
-    <h2> Send flowers for $30 </h2>
+    <table>
 
-  <br>
+      <tr>
+        <td><%= image_tag("flowers/2.jpg") %></td>
+        <td><%= image_tag("flowers/7.jpg") %></td>
+        <td><%= image_tag("flowers/8.jpg") %></td>
+      </tr>
+      <!-- <tr>
+        <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
+        <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
+        <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
+      </tr>
 
-
-
-  <table style="width:100%">
-
-    <tr>
-
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
-    </tr>
-    <tr>
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
-    </tr>
-
-    <tr>
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
-      <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
-    </tr>
-  </table>
+      <tr>
+        <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
+        <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
+        <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
+      </tr> -->
+    </table>
+    
+      <div class="heading">
+        <h1 class="welcomemsg"> Welcome to Flower Picks </h1>
+        <h2 class="subheading"> Send flowers for $30 </h2>
+      </div>
 
 
-
-  <br>
-
-
+  </div>
 </body>
