@@ -1,9 +1,11 @@
+<div>
+  <% if user_signed_in? %>
+    <li> <h2> <%= "Hello #{current_user.email.split("@")[0]}!" %> </h2></li>
+      <li> <h2 class="logout"> <%= link_to "Log out", destroy_user_session_path, method: :delete %> </h2> </li>
 
-<% if user_signed_in? %>
-  <%= "Logged in as #{current_user.email}" %>
-  <li> <h2> <%= link_to "Log out", destroy_user_session_path, method: :delete %> </h2> </li> 
-<% else %>
-  <li> <h2> <%= link_to "Login", new_user_session_path %> </h2> </li> 
-  <li> <h2> <%= link_to "Login with Facebook", user_facebook_omniauth_authorize_path %> </h2> </li> 
-  <li> <h2> <%= link_to "Sign up", new_user_registration_path %> </h2> </li> 
-<% end %>
+  <% else %>
+    <li> <h2> <%= link_to "Login", new_user_session_path %> </h2> </li>
+    <li> <h2> <%= link_to "Login with Facebook", user_facebook_omniauth_authorize_path %> </h2> </li>
+    <li> <h2> <%= link_to "Sign up", new_user_registration_path %> </h2> </li>
+  <% end %>
+</div>
