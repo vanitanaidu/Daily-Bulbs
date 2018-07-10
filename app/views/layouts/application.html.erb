@@ -10,8 +10,9 @@
 
   <body>
 
-
- <%= render 'layouts/header' %> 
+   <div class="login">
+     <%= render 'layouts/header' %>
+   </div>
 
 
     <h1><%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %></h1>

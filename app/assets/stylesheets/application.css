@@ -27,12 +27,8 @@
 /*------  Body --------------------------- */
 
 .center {
-  margin: auto;
   width: 100%;
-  padding-top: 3%;
 }
-
-
 
 .signup-error{
   background: transparent;
@@ -41,6 +37,7 @@
 }
 
 input, select{
+
   background-color: $bg-danger;
   border-color: $brand-danger;
   color: $gray-base;

@@ -24,7 +24,7 @@ function attachListeners() {
 function moreFlowers() {
   $.getJSON("/products", function(products) {
 
-    for( var i = 0; i < products.length; i++)
+    for(var i = 0; i < products.length; i++)
       if (i && (i / 1 !== 1)) {
         var months = new Array("January", "February", "March",
                       "April", "May", "June", "July", "August", "September",
@@ -37,7 +37,26 @@ function moreFlowers() {
         var currentMonth = date.getUTCMonth();
         var currentYear = date.getUTCFullYear();
         var formattedDate = (months[currentMonth] + " " + currentDate + "," + " " + currentYear);
-        var product = new Product(products[i].name, products[i].description, formattedDate)
+
+
+        var images = [
+        "https://i.imgur.com/14yyQ0K.jpg",
+        "https://i.imgur.com/ahDvbBG.jpg",
+        "https://i.imgur.com/RV80uWc.jpg",
+        "https://i.imgur.com/8skqGbu.jpg",
+        "https://i.imgur.com/8skqGbu.jpg",
+        "https://i.imgur.com/UhG6hXs.jpg",
+        "https://i.imgur.com/bB8UWhW.jpg",
+        ]
+
+
+        var randomNum=Math.floor(Math.random()*images.length)
+        var img = document.createElement("img");
+        img.src = images[randomNum];
+        var src = document.getElementById("past_flowers");
+        var image = src.appendChild(img);
+
+        var product = new Product(image + products[i].name, products[i].description, formattedDate)
         product.render()
       }
   })

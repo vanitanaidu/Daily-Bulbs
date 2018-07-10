@@ -2,75 +2,102 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
 //nav bar
-ul {
-  position: fixed;
-  top: 0%;
+.nav {
   width: 100%;
-  margin: 0;
-  padding: 0;
+  // padding: 0;
   overflow: hidden;
-  background-color: white;
+  background-color: grey;
   z-index: 99999;
+   margin:  0px 5px 20px 0px;
   list-style-type: none;
 }
 
 li h2 {
   float: left;
   display: block;
-  text-align: center;
+  // text-align: center;
   padding: 2% 3%;
-  text-decoration: none;
+  // text-decoration: none;
+  background-color: black
 }
 
-/* Change the link color to #111 (black) on hover */
-li:hover {
-  background-color: #ffffff;
+// .login {
+//   list-style: none;
+//
+// }
+
+// logout link
+.logout {
+  float: right;
+  padding-right: 10%;
 }
+
+
+/* Change the link color to #111 (black) on hover */
+// li:hover {
+//   background-color: #ffffff;
+// }
 
 table, tr, td {
   border: 5px solid white;
 }
 
-img {
+//home page
+
+.container img {
   display: inline-block;
   width: 100%;
-  height: 85vh;
+  height: 80vh;
   object-fit: cover;
 }
 
-a.hovertext {
-  position: relative;
-  width: 500px;
-  text-decoration: none !important;
-  text-align: center;
+//gallery page
+
+.gallery_images img {
+  display: inline-block;
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
 }
 
-a.hovertext::after {
-  content: attr(title);
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  padding: 0.5em 20px;
-  width: 460px;
-  background: rgba(0,0,0,0.8);
-  text-decoration: none !important;
-  color: #fff;
-  opacity: 0;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
-  -ms-transition: 0.5s;
-}
 
-a.hovertext:hover::after, a.hovertext:focus::after {
-  opacity: 1.0;
-}
+
+
+
+// a.hovertext {
+//   position: relative;
+//   width: 500px;
+//   text-decoration: none !important;
+//   text-align: center;
+// }
+//
+// a.hovertext::after {
+//   content: attr(title);
+//   position: absolute;
+//   left: 0;
+//   bottom: 0;
+//   padding: 0.5em 20px;
+//   width: 460px;
+//   background: rgba(0,0,0,0.8);
+//   text-decoration: none !important;
+//   color: #fff;
+//   opacity: 0;
+//   -webkit-transition: 0.5s;
+//   -moz-transition: 0.5s;
+//   -o-transition: 0.5s;
+//   -ms-transition: 0.5s;
+// }
+//
+// a.hovertext:hover::after, a.hovertext:focus::after {
+//   opacity: 1.0;
+// }
 
 .container {
   position: relative;
   text-align: center;
-  color: white;
 }
 
 /* Centered text */
@@ -93,13 +120,25 @@ h2.subheading {
   color: white;
 }
 
-.logout {
-  float: right;
-  padding-right: 7%;
+
+
+#past_flowers {
+  padding-bottom: 15%;
+  padding-top: 5%;
+  padding-left: 15%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  // margin-bottom: 2em;
+
 }
 
-// index page
-// .display_flowers {
-//   width: auto;
-//   height: 20%;
-// }
+//'more past flowers' button
+.js-more_flowers {
+  width: 80%;
+  font-size: 180%;
+  border: 2px solid black;
+  background-color: #adafb2;
+  padding: 20px;
+
+}

@@ -4,21 +4,21 @@
 <table width="100%" border="1" cellpadding="5" >
 
   <tr>
-    <td align="center" valign="center">
+    <td align="center" valign="center" class="gallery_images">
       <%= image_tag("flowers/3.jpg") %>
       <br>
       <h3><strong> <%= @products.first.name %> (<%= @products.first.date_delivered ? @products.first.delivery_date : "" %>) </strong></h3>
       <h3> <%= @products.first.description %></h3>
     </td>
 
-    <td align="center" valign="center">
+    <td align="center" valign="center" class="gallery_images">
       <%= image_tag("flowers/1.jpg") %>
       <br>
       <h3><strong> <%= @products.second.name %> (<%= @products.second.date_delivered ? @products.second.delivery_date : "" %>) </strong></h3>
     <h3><strong> <%= @products.second.description %> </strong></h3>
     </td>
 
-    <td align="center" valign="center">
+    <td align="center" valign="center" class="gallery_images">
       <%= image_tag("flowers/2.jpg") %>
       <br>
       <h3><strong> <%= @products.third.name %> (<%= @products.third.date_delivered ? @products.third.delivery_date : "" %>) </strong></h3>
@@ -27,33 +27,31 @@
   </tr>
 
   <tr>
-    <td align="center" valign="center">
+    <td align="center" valign="center" class="gallery_images">
       <%= image_tag("flowers/4.jpg") %>
       <br>
       <h3><strong> <%= @products.fourth.name %> (<%= @products.fourth.date_delivered ? @products.fourth.delivery_date : "" %>) </strong></h3>
       <h3><strong> <%= @products.fourth.description %> </strong></h3>
     </td>
 
-    <td align="center" valign="center">
+    <td align="center" valign="center" class="gallery_images">
       <%= image_tag("flowers/5.jpg") %>
       <br>
       <h3><strong> <%= @products.fifth.name %> (<%= @products.fifth.date_delivered ? @products.fifth.delivery_date : "" %>) </strong></h3>
       <h3><strong> <%= @products.fifth.description %> </strong></h3>
     </td>
 
-    <td align="center" valign="center">
+    <td align="center" valign="center" class="gallery_images">
       <%= image_tag("flowers/6.jpg") %>
       <br>
       <h3><strong> <%= @products.first.name %> (<%= @products.first.date_delivered ? @products.first.delivery_date : "" %>) </strong></h3>
       <h3><strong> <%= @products.first.description %> </strong></h3>
     </td>
+
   </tr>
+  </table>
 
 
-
-
-</table>
-
-<button class="js-more_flowers">More past flowers</button>
-
-<div id="past_flowers"></div>
+    <div id="past_flowers">
+       <button class="js-more_flowers">More past flowers</button>
+    </div>
