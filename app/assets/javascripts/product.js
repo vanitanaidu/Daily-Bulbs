@@ -1,13 +1,46 @@
-function Product(name, description, date_delivered, image) {
+function Product(name, date_delivered, description) {
   this.name = name
   this.description = description
   this.date_delivered = date_delivered
 }
 
 Product.prototype.render = function() {
-  $("#past_flowers").append("<br>" + `${this.name}` + ` (${this.date_delivered})`+ "<br>" + `${this.description}` + "<br></br>")
-  $(".js-more_flowers").remove()
+
+  var images = [
+  "https://i.imgur.com/14yyQ0K.jpg",
+  "https://i.imgur.com/ahDvbBG.jpg",
+  "https://i.imgur.com/RV80uWc.jpg",
+  "https://i.imgur.com/8skqGbu.jpg",
+  "https://i.imgur.com/8skqGbu.jpg",
+  "https://i.imgur.com/UhG6hXs.jpg",
+  "https://i.imgur.com/bB8UWhW.jpg",
+
+  ]
+
+  $("#whatever").prepend("<div class='responsive'>" + "<div class='gallery' id='image'>" + "<div class='desc'>" + `${this.name}` + `(${this.date_delivered})`+ "<br>" + `${this.description}` + "</div></div></div>")
+
+
+
+  const randomNum=Math.floor(Math.random()*images.length)
+  const img = document.createElement("img");
+  img.src = images[randomNum];
+  const src = document.getElementById("image");
+  const image = src.appendChild(img);
+
+
+
+
+
+
+
+
+
+
+
+$(".js-more_flowers").remove()
 }
+
+
 
 $(document).on('turbolinks:load', function() {
   attachListeners()
@@ -26,40 +59,26 @@ function moreFlowers() {
 
     for(var i = 0; i < products.length; i++)
       if (i && (i / 1 !== 1)) {
-        var months = new Array("January", "February", "March",
+        const months = new Array("January", "February", "March",
                       "April", "May", "June", "July", "August", "September",
                       "October", "November", "December");
 
         const sortedProducts = products.sort((a, b) => a.date_delivered - b.date_delivered);
 
-        var date = new Date(sortedProducts[i].date_delivered);
-        var currentDate = date.getUTCDate();
-        var currentMonth = date.getUTCMonth();
-        var currentYear = date.getUTCFullYear();
-        var formattedDate = (months[currentMonth] + " " + currentDate + "," + " " + currentYear);
+        const date = new Date(sortedProducts[i].date_delivered);
+        const currentDate = date.getUTCDate();
+        const currentMonth = date.getUTCMonth();
+        const currentYear = date.getUTCFullYear();
+        const formattedDate = (months[currentMonth] + " " + currentDate + "," + " " + currentYear);
 
 
-        var images = [
-        "https://i.imgur.com/14yyQ0K.jpg",
-        "https://i.imgur.com/ahDvbBG.jpg",
-        "https://i.imgur.com/RV80uWc.jpg",
-        "https://i.imgur.com/8skqGbu.jpg",
-        "https://i.imgur.com/8skqGbu.jpg",
-        "https://i.imgur.com/UhG6hXs.jpg",
-        "https://i.imgur.com/bB8UWhW.jpg",
-        ]
 
+        const product = new Product(products[i].name, formattedDate, products[i].description)
 
-        var randomNum=Math.floor(Math.random()*images.length)
-        var img = document.createElement("img");
-        img.src = images[randomNum];
-        var src = document.getElementById("past_flowers");
-        var image = src.appendChild(img);
-
-        var product = new Product(image + products[i].name, products[i].description, formattedDate)
-        product.render()
+      product.render()
       }
   })
+
 }
 
 // loading the form via AJAX on the product show page

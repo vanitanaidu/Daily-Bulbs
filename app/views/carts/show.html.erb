@@ -1,15 +1,16 @@
 <body class=center>
+  <div class="cart">
+    <h1>Your Cart</h1>
 
-<h1>Your Cart</h1>
+       <%= render partial: "cart", locals: {cart: @cart} %>
 
-  <%= render partial: "cart", locals: {cart: @cart} %>
-
-  <%= button_to 'Empty Cart', cart_path(@cart), method: :delete, :data => {:confirm => 'This will empty everything in your cart. Are you sure?'} %></div>
+      <div class="bigbutton"> <%= button_to 'Empty Cart', cart_path(@cart), method: :delete, :data => {:confirm => 'This will empty everything in your cart. Are you sure?'} %> </div>
 
 
-  <% if @cart.total != 0 %>
-  <p>  <%= button_to 'Proceed to Checkout', checkout_path, method: :post %></p>
-  <% end %>
+      <% if @cart.total != 0 %>
+        <div class="bigbutton">  <%= button_to 'Proceed to Checkout', checkout_path, method: :post %> </div>
+        <% end %>
 
-  <p>  <%= button_to 'Home', root_path, method: :get  %></p>
+        <div class="bigbutton"> <%= button_to 'Home', root_path, method: :get  %> </div>
+    </div>
 </body>
