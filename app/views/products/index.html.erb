@@ -1,6 +1,6 @@
-<!-- <body class=center>
+<body class=center>
   <div class="container">
-<h1> Flower picks in the past </h1>
+<!-- <h1> Flower picks in the past </h1>
   <table width="100%" border="1" cellpadding="5" class="gallery_images" >
 
 
@@ -67,94 +67,118 @@
 
 
 
-<h1> Flower picks in the past </h1>
+    <h1> Flower picks in the past </h1>
+    <br></br>
 
-<div class="responsive">
-  <div class="gallery">
+    <div class="responsive">
+      <div class="gallery">
 
-    <%= image_tag("flowers/1.jpg", size: '600x400') %>
-    <div class="desc">Add a description of the image here.</div>
+        <%= image_tag("flowers/1.jpg", size: '600x400') %>
+        <div class="desc">
+          <h3><%= @products.first.name %> (<%= @products.first.date_delivered ? @products.first.delivery_date : "" %>)</h3>
+          <h3><%= @products.first.description.slice(0,30) %></h3>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="responsive">
+      <div class="gallery">
+
+        <%= image_tag("flowers/2.jpg", size: '600x400') %>
+        <div class="desc">
+          <h3><%= @products.second.name %> (<%= @products.second.date_delivered ? @products.second.delivery_date : "" %>)</h3>
+          <h3><%= @products.second.description.slice(0,30) %></h3>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="responsive">
+      <div class="gallery">
+
+        <%= image_tag("flowers/3.jpg", size: '600x400') %>
+        <div class="desc">
+          <h3><%= @products.third.name %> (<%= @products.third.date_delivered ? @products.third.delivery_date : "" %>)</h3>
+          <h3><%= @products.third.description.slice(0,30) %></h3>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="responsive">
+      <div class="gallery">
+
+        <%= image_tag("flowers/4.jpg", size: '600x400') %>
+        <div class="desc">
+          <h3><%= @products.fourth.name %> (<%= @products.fourth.date_delivered ? @products.fourth.delivery_date : "" %>)</h3>
+          <h3><%= @products.fourth.description.slice(0,30) %></h3>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="responsive">
+      <div class="gallery">
+
+        <%= image_tag("flowers/5.jpg", size: '600x400') %>
+        <div class="desc">
+          <h3><%= @products.fifth.name %> (<%= @products.fifth.date_delivered ? @products.fifth.delivery_date : "" %>)</h3>
+          <h3><%= @products.fifth.description.slice(0,30) %></h3>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="responsive">
+      <div class="gallery">
+
+        <%= image_tag("flowers/7.jpg", size: '600x400') %>
+        <div class="desc">
+          <h3><%= @products.first.name %> (<%= @products.first.date_delivered ? @products.first.delivery_date : "" %>)</h3>
+          <h3> <%= @products.first.description.slice(0,30) %></h3></div>
+        </div>
+    </div>
+
+    <div class="responsive">
+      <div class="gallery">
+
+        <%= image_tag("flowers/8.jpg", size: '600x400') %>
+        <div class="desc">
+          <h3><%= @products.first.name %> (<%= @products.first.date_delivered ? @products.first.delivery_date : "" %>)</h3>
+          <h3> <%= @products.first.description.slice(0,30) %></h3>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="gallery">
+
+        <%= image_tag("flowers/9.jpg", size: '600x400') %>
+        <div class="desc">
+          <h3><%= @products.first.name %> (<%= @products.first.date_delivered ? @products.first.delivery_date : "" %>)</h3>
+          <h3><%= @products.first.description.slice(0,30) %></h3>
+        </div>
+
+      </div>
+    </div>
+
+
+    <button class="js-more_flowers" > More past flowers </button>
+
+
+    <div id="more_flowers">
+
+
+    </div>
+
+    <div class="clearfix"></div>
 
   </div>
-</div>
-
-
-<div class="responsive">
-  <div class="gallery">
-
-    <%= image_tag("flowers/2.jpg", size: '600x400') %>
-    <div class="desc">Add a description of the image here</div>
-
-  </div>
-</div>
-
-
-<div class="responsive">
-  <div class="gallery">
-
-    <%= image_tag("flowers/3.jpg", size: '600x400') %>
-    <div class="desc">Add a description of the image here</div>
-
-  </div>
-</div>
-
-
-<div class="responsive">
-  <div class="gallery">
-
-    <%= image_tag("flowers/4.jpg", size: '600x400') %>
-    <div class="desc">Add a description of the image here</div>
-
-  </div>
-</div>
-
-
-<div class="responsive">
-  <div class="gallery">
-
-    <%= image_tag("flowers/5.jpg", size: '600x400') %>
-    <div class="desc">Add a description of the image here</div>
-
-  </div>
-</div>
-
-
-<div class="responsive">
-  <div class="gallery">
-
-    <%= image_tag("flowers/7.jpg", size: '600x400') %>
-    <div class="desc">Add a description of the image here</div>
-
-  </div>
-</div>
-
-<div class="responsive">
-  <div class="gallery">
-
-    <%= image_tag("flowers/8.jpg", size: '600x400') %>
-    <div class="desc">Add a description of the image here</div>
-
-  </div>
-</div>
-
-<div class="responsive">
-  <div class="gallery">
-
-    <%= image_tag("flowers/9.jpg", size: '600x400') %>
-    <div class="desc">Add a description of the image here</div>
-
-  </div>
-</div>
-
-
-<button class="js-more_flowers" > More past flowers </button>
-
-
-<div id="whatever">
-
-
-
-
-</div>
-
-<div class="clearfix"></div>
+</body>

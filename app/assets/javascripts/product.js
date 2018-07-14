@@ -1,8 +1,10 @@
+
 function Product(name, date_delivered, description) {
   this.name = name
   this.description = description
   this.date_delivered = date_delivered
 }
+
 
 Product.prototype.render = function() {
 
@@ -14,37 +16,29 @@ Product.prototype.render = function() {
   "https://i.imgur.com/8skqGbu.jpg",
   "https://i.imgur.com/UhG6hXs.jpg",
   "https://i.imgur.com/bB8UWhW.jpg",
-
+  "https://i.imgur.com/Aj9jTRJ.jpg",
+  "https://i.imgur.com/wZRNCvB.jpg",
+  "https://i.imgur.com/Q0uRigi.jpg",
+  "https://i.imgur.com/WJY6VG8.jpg",
+  "https://i.imgur.com/98NwoxC.jpg",
   ]
 
-  $("#whatever").prepend("<div class='responsive'>" + "<div class='gallery' id='image'>" + "<div class='desc'>" + `${this.name}` + `(${this.date_delivered})`+ "<br>" + `${this.description}` + "</div></div></div>")
+  $("#more_flowers").prepend("<div class='responsive'>" + "<div class='gallery' id='image'>" + "<div class='desc'>" + "<h3>" + `${this.name}` + ` (${this.date_delivered})`+ "<br></br>" + `${this.description.slice(0,30)}` + "</h3>" + "</div></div></div>")
 
-
-
-  const randomNum=Math.floor(Math.random()*images.length)
+  const randomNum = Math.floor(Math.random()*(images.length))
   const img = document.createElement("img");
   img.src = images[randomNum];
   const src = document.getElementById("image");
-  const image = src.appendChild(img);
+  const image = src.prepend(img);
 
-
-
-
-
-
-
-
-
-
-
-$(".js-more_flowers").remove()
+  $(".js-more_flowers").remove()
 }
-
 
 
 $(document).on('turbolinks:load', function() {
   attachListeners()
 })
+
 
 function attachListeners() {
   $(".js-more_flowers").on("click", function() { moreFlowers() })
@@ -53,6 +47,7 @@ function attachListeners() {
     e.preventDefault()
   })
 }
+
 
 function moreFlowers() {
   $.getJSON("/products", function(products) {
@@ -71,15 +66,12 @@ function moreFlowers() {
         const currentYear = date.getUTCFullYear();
         const formattedDate = (months[currentMonth] + " " + currentDate + "," + " " + currentYear);
 
-
-
         const product = new Product(products[i].name, formattedDate, products[i].description)
-
-      product.render()
+        product.render()
       }
   })
-
 }
+
 
 // loading the form via AJAX on the product show page
 function order() {
@@ -94,6 +86,7 @@ function order() {
     })
   })
 }
+
 
 // displaying the form via AJAX on the product show page
 function submitForm(form) {
@@ -117,6 +110,7 @@ function submitForm(form) {
   })
   order()
 }
+
 
 function cartButtons(cartID) {
   $("#error_msg").remove()
