@@ -1,7 +1,9 @@
+
 <body class=center>
   <div class="cart">
-    <h1>Your Cart</h1>
 
+        <h1>Your Cart</h1>
+        <br></br>
        <%= render partial: "cart", locals: {cart: @cart} %>
 
       <div class="bigbutton"> <%= button_to 'Empty Cart', cart_path(@cart), method: :delete, :data => {:confirm => 'This will empty everything in your cart. Are you sure?'} %> </div>
@@ -11,6 +13,5 @@
         <div class="bigbutton">  <%= button_to 'Proceed to Checkout', checkout_path, method: :post %> </div>
         <% end %>
 
-        <div class="bigbutton"> <%= button_to 'Home', root_path, method: :get  %> </div>
     </div>
 </body>

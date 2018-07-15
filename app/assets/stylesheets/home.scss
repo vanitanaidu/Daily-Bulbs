@@ -6,23 +6,33 @@
 
 //nav bar
 .nav {
-  width: 100%;
-  // padding: 0;
-  overflow: hidden;
-
-  z-index: 99999;
-   margin:  0px 5px 20px 0px;
   list-style-type: none;
+  width: 99%;
+  overflow: hidden;
+  z-index: 99999;
+  margin:  0px 0px 20px 0px;
+  background-color: #e6ffff;
+
 }
 
-li h2 {
+ul li h2 {
   float: left;
   display: block;
-  // text-align: center;
-  padding: 2% 3%;
-  // text-decoration: none;
+  padding: 2% 2%;
+  text-decoration: none;
 }
 
+
+ul li h2 a {
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+}
+
+.material-icons {
+  font-size: 48px;
+}
 // .login {
 //   list-style: none;
 //
@@ -39,10 +49,10 @@ li h2 {
 // li:hover {
 //   background-color: #ffffff;
 // }
-
-table, tr, td {
-  border: 5px solid white;
-}
+// 
+// table, tr, td {
+//   border: 5px solid white;
+// }
 
 //home page
 
@@ -120,24 +130,25 @@ h2.subheading {
 }
 
 //'more past flowers' button
-.js-more_flowers, .js-click_to_order {
+.js-more_flowers,  {
   display: inline;
-  width: 80%;
+  width: 60%;
   font-size: 160%;
-  border: 1px solid black;
+  border: 3px solid grey;
   background-color: #adafb2;
   padding: 20px;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  background-color: #ccffff;
+  color: #333333;
 }
 
-
-
+h1 {
+  font-size: 260%;
+}
 
 div.gallery {
    border: 2px solid #ccc;
-}
-
-div.gallery:hover {
-    border: 2px solid #777;
 }
 
 div.gallery img {

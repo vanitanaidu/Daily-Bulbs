@@ -1,10 +1,18 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:checkout, :destroy, :show]
 
-  def show
+  def show  
     respond_to do |format|
-      format.html { render :show, layout: false }
+      format.html { render :show }
+      format.json { render json: @cart.line_products}
     end
+
+
+
+    # respond_to do |format|
+    #   format.html { render :show, layout: false }
+      # this code was right beside render :show `, layout: false`. Copy and paste this in this function if there is any problems.
+
   end
 
   def checkout

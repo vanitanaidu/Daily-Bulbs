@@ -1,0 +1,20 @@
+#form {
+  margin-top: 100px;
+}
+
+#form a {
+  font-size: 180%;
+  color: black;
+  text-decoration: none;
+
+}
+
+#form a:hover {
+    color: blue;
+    font-size: 230%;
+}
+
+
+#cart_ajax {
+  margin-top: 40px;
+}

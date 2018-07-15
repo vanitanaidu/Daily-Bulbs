@@ -25,10 +25,17 @@
 }
 
 /*------  Body --------------------------- */
+body {
+max-width: 95%;
+margin: auto;
+color: black;
+}
 
 .center {
   width: 100%;
 }
+
+
 
 .signup-error{
   background: transparent;

@@ -1,11 +1,11 @@
 
   <div class="daily_pick"> <br> <%= image_tag("flowers/#{rand(9)}.jpg") %> </div>
-  <br></br>
-    <div class="product">
+
+    <div class="product" id="product_details">
       <h2>Flower Name: </h2> <h2 class="products"><%= product.name %></h2>
       <br>
       <h2>Description: </h2> <h2 class="products"> <%= product.description %> </h2>
       <br>
       <h2><p> Delivery Date: </h2> <h2 class="products"> Today (<%= product.delivery_date %>) </p> </h2>
-      <br></br>
+
     </div>

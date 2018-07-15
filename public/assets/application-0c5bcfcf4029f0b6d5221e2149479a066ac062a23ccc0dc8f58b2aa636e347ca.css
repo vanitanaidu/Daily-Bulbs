@@ -1,17 +1,10 @@
-/* line 5, /Users/josheckert/Development/code/jquery-frontend/app/assets/stylesheets/home.scss */
-table, tr, td {
-  border: 5px solid white;
-}
-
-/* line 10, /Users/josheckert/Development/code/jquery-frontend/app/assets/stylesheets/home.scss */
-img {
+/*img {
   display: inline-block;
   width: 350px;
   height: 350px;
   object-fit: cover;
 }
 
-/* line 19, /Users/josheckert/Development/code/jquery-frontend/app/assets/stylesheets/home.scss */
 a.hovertext {
   position: relative;
   width: 500px;
@@ -19,7 +12,6 @@ a.hovertext {
   text-align: center;
 }
 
-/* line 25, /Users/josheckert/Development/code/jquery-frontend/app/assets/stylesheets/home.scss */
 a.hovertext::after {
   content: attr(title);
   position: absolute;
@@ -37,29 +29,10 @@ a.hovertext::after {
   -ms-transition: 0.5s;
 }
 
-/* line 41, /Users/josheckert/Development/code/jquery-frontend/app/assets/stylesheets/home.scss */
 a.hovertext:hover::after, a.hovertext:focus::after {
   opacity: 1.0;
 }
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
 
-
- */
-
-
-
-/*------  Errors --------------------------- */
 
 .field_with_errors {
   padding: 2px;
@@ -68,14 +41,12 @@ a.hovertext:hover::after, a.hovertext:focus::after {
   border-color: red;
 }
 
-/*------  Body --------------------------- */
+
 
 .center {
     margin: auto;
     width: 80%;
     padding: 20px;
-  
-}
 
 
 
@@ -86,6 +57,8 @@ a.hovertext:hover::after, a.hovertext:focus::after {
 
 
 
+
+/*
 
 
 .has-signup-error{
@@ -109,4 +82,4 @@ a.hovertext:hover::after, a.hovertext:focus::after {
         border-color: $brand-danger;
       }
     }
-  }
+  }*/

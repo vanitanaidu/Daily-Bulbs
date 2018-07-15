@@ -101,6 +101,7 @@ function submitForm(form) {
       var cartID = response["cart"]["id"]
       cartButtons(cartID)
       $("#textbox").remove()
+      $("#product_details").remove()
     },
     error: function(failure){
       failure.responseJSON.errors.forEach(function(error){
@@ -113,8 +114,29 @@ function submitForm(form) {
 
 
 function cartButtons(cartID) {
-  $("#error_msg").remove()
-  $.get(`/carts/${cartID}`, function(response){
-    $("#form").html(response)
+  // $("#error_msg").remove()
+  // $.get(`/carts/${cartID}`, function(response){
+
+  //   $("#form").html(response)
+  // })
+
+  $.getJSON(`/carts/${cartID}`, function(response){
+        for(var i = 0; i < response.length; i++) {
+          const line_product = response[i]
+
+            const name = line_product.product.name
+            const upperName = name[0].toUpperCase() + name.slice(1);
+            const price = line_product.product.price
+            const quantity = line_product.quantity
+            const grand_total = price * quantity
+
+            const id = line_product.cart.id
+
+             $("#form").html("<a>" + "<div id='cart_ajax'>"  + "</div></a>")
+             $("#cart_ajax").append(upperName + " | " + `$${price}`+ " | " + "Quantity: " + quantity + "<br></br>" + "Grand Total: " + `$${grand_total}`)
+             $('a').attr('href', `/carts/${id}`)
+             $('#daily_pick_title').html("Order Summary")
+        }
+
   })
 }

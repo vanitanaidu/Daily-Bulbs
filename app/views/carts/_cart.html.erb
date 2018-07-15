@@ -1,12 +1,9 @@
-
-
-
-  <% cart.line_products.each do |line_product| %>
-    <% if line_product.product.date_delivered == Date.today  %>
-      <%= line_product.product.name %> | <%= number_to_currency(line_product.product.price.to_f) %> | Quantity: <%= line_product.quantity %>
-    <% end %>
+<% cart.line_products.each do |line_product| %>
+  <% if line_product.product.date_delivered == Date.today  %>
+    <%= line_product.product.name %> | <%= number_to_currency(line_product.product.price.to_f) %> | Quantity: <%= line_product.quantity %>
   <% end %>
-  <br>
+<% end %>
+<br>
 
 
 <p>Grand Total: <strong><%= number_to_currency(cart.total.to_f) %></strong></p>
