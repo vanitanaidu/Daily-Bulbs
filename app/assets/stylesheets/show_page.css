@@ -1,64 +1,64 @@
+h1#daily_pick_title {
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #595959;
+  padding: 5px;
+  margin-top: 5%;
+  border-bottom: 1px solid #ddd;
+}
+
 .js-click_to_order {
-  width: 10%;
-  font-size: 150%;
+  width: 25%;
+  height: 50px;
+  float: right;
+  font-size: 120%;
   margin-bottom: 5%;
   margin-top: 40px;
-  margin-right: 5%;
+  margin-right: 16%;
   background-color: #ccffff;
   padding: 10px;
-  border: 3px solid grey;
+  border: 1px solid rgba(0, 0, 0, 0.6);
   color: black;
+}
+
+.product {
+  margin-right: 9%;
 }
 
 h2.products {
   font-weight: normal;
 }
 
-.cart {
-  float:right;
-  margin-right: 15%;
-
-}
-
 .daily_pick img {
   display: inline-block;
-  width: 50%;
-  height: 50vh;
+  width: 40%;
+  height: 55vh;
   object-fit: cover;
   float: left;
-  margin-left: 5%;
-  padding:1px;
-  padding-right: 2px;
-  padding-left: 2px;
-  border:  3px solid rgba(0, 0, 0, 0.6);
-
+  margin-left: 8%;
+  padding: 26px;
+  border: 3px solid rgba(0, 0, 0, 0.6);
 }
 
-.product {
-  margin-right: 5%;
-}
-
-/*the word 'quantity' on products show page*/
-#textbox {
-  font-size: 150%;
-  margin-top: 5%;
-}
-
-
-/*//add to cart button*/
-#new_line_product input{
-  font-size: 5%;
+/* quantity textbox */
+#new_line_product input {
+  width: 15%;
+  height: 50px;
+  font-size: 100%;
   padding: 10px;
-
 }
 
 #new_line_product input[type="submit"] {
-  font-size: 50%;
+  font-size: 120%;
+  height: 50px;
   padding: 10px;
   background-color: #ccffff;
   border: 1px solid grey;
   color: black;
+  margin-right: 8%;
 }
+
 
 /*.cart input {
   width: 30%;
@@ -70,18 +70,13 @@ h2.products {
 }*/
 
 form.button_to {
-
   margin-top: 15%;
   margin-left: 20%;*/
-/*background-color: green;
-size: 200px;*/
 }
 
 form input[type="submit"] {
   color: black;
   font-size: 20px;
-
   size: 100px;
   padding: 5%;
-
 }

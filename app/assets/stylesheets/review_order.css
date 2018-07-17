@@ -1,0 +1,49 @@
+
+
+
+.review_order_table {
+  margin-top: 5%;
+  table-layout: fixed;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+
+.review_heading {
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #595959;
+  padding: 5px;
+  margin-top: 5%;
+  border-bottom: 1px solid #ddd;
+}
+
+.review_order_table thead {
+  font-size: 100%;
+  text-align: left;
+}
+
+.review_order_table th, .review_order_table td {
+  padding: 7px 60px;
+  width: 40%;
+  border-bottom: 1px solid #ddd;
+  font-size: 150%;
+
+}
+
+ .review_order_table td {
+    height: 20vh;
+ }
+
+
+
+.place_order_button input[type=submit] {
+  font-size: 150%;
+  padding: 2%;
+  margin-right: 12%;
+  margin-bottom: 10%;
+  background-color: #ccffff;
+  width: 40%;
+  height: 30%;
+}

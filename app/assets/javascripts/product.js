@@ -77,6 +77,8 @@ function moreFlowers() {
 function order() {
   $.get("/line_products/new", function(response) {
     $("#textbox").html(response)
+    $("label[for=line_product_quantity]").remove()
+    $("#line_product_quantity").attr("placeholder", "Quantity");
     $(".js-click_to_order").remove()
   }).done(function() {
     document.getElementById("new_line_product")
@@ -90,9 +92,7 @@ function order() {
 
 // displaying the form via AJAX on the product show page
 function submitForm(form) {
-
   formData = $(form).serialize();
-
   $.ajax({
     type: "POST",
     url: "/line_products",
@@ -114,28 +114,24 @@ function submitForm(form) {
 
 
 function cartButtons(cartID) {
-  // $("#error_msg").remove()
-  // $.get(`/carts/${cartID}`, function(response){
-
-  //   $("#form").html(response)
-  // })
-
   $.getJSON(`/carts/${cartID}`, function(response){
         for(var i = 0; i < response.length; i++) {
           const line_product = response[i]
+          const name = line_product.product.name
+          const upperName = name[0].toUpperCase() + name.slice(1);
+          const price = line_product.product.price
+          const quantity = line_product.quantity
+          const grand_total = price * quantity
+          const id = line_product.cart.id
 
-            const name = line_product.product.name
-            const upperName = name[0].toUpperCase() + name.slice(1);
-            const price = line_product.product.price
-            const quantity = line_product.quantity
-            const grand_total = price * quantity
+           $("#form").html("<a>" + "<div id='cart_ajax'>"  + "</div></a>")
+           $("#cart_ajax").append(upperName + " | " + `$${price}`+ " | " + "Quantity: " + quantity + "<br></br>")
 
-            const id = line_product.cart.id
 
-             $("#form").html("<a>" + "<div id='cart_ajax'>"  + "</div></a>")
-             $("#cart_ajax").append(upperName + " | " + `$${price}`+ " | " + "Quantity: " + quantity + "<br></br>" + "Grand Total: " + `$${grand_total}`)
-             $('a').attr('href', `/carts/${id}`)
-             $('#daily_pick_title').html("Order Summary")
+           $("#my_cart_button").html("<a>" + "<button>" + "My Cart" + "</button>" + "</a>")
+           $('a').attr('href', `/carts/${id}`)
+
+           $('#daily_pick_title').html("Order Summary")
         }
 
   })

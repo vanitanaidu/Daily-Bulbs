@@ -1,34 +1,54 @@
 
 <body class=center>
 
-<h2> Please Review Your Order </h2>
+<h1 class="review_heading"> Order Review </h1>
 
-  <h3> <%= @shipping_add.address_type %>: </h3>
+  <table class="review_order_table">
 
-        <p> <%= @shipping_add.street_1.titleize %> </p>
-        <p> <%= @shipping_add.street_2.titleize %> </p>
-        <p> <%= @shipping_add.city.titleize %> </p>
-        <p> <%= @shipping_add.state.titleize %> </p>
-        <p> <%= @shipping_add.zip_code %> </p>
+    <thead>
+      <tr>
 
-  <h3> <%= @billing_add.address_type %>: </h3>
+        <th><%= @shipping_add.address_type %></th>
 
-        <p> <%= @billing_add.street_1.titleize %> </p>
-        <p> <%= @billing_add.street_2.titleize %> </p>
-        <p> <%= @billing_add.city.titleize %> </p>
-        <p> <%= @billing_add.state.titleize %> </p>
-        <p> <%= @billing_add.zip_code %> </p>
+        <th><%= @billing_add.address_type %></th>
+        <th> Your Message</th>
 
 
+      </tr>
+    </thead>
+    <tbody>
 
-  <h3> Message to Recipient: </h3>
+        <tr>
 
-    <p> <%= @message.content.titleize %> </p>
-    <p> <% if @message.content.empty? %> </p>
-      <p> <h3> You have no messages </h3> </p>
-        <% end %>
+          <td>
+            <%= @shipping_add.street_1.titleize %>
+            <%= @shipping_add.street_2.titleize %>
+            <%= @shipping_add.city.titleize %>
+            <%= @shipping_add.state.titleize %>
+            <%= @shipping_add.zip_code %>
+          </td>
 
-   <%= button_to 'Place my Order', thank_you_path(current_user), data: { confirm: 'Confirm?' } %>
+          <td>
+            <%= @billing_add.street_1.titleize %>
+            <%= @billing_add.street_2.titleize %>
+            <%= @billing_add.city.titleize %>
+            <%= @billing_add.state.titleize %>
+            <%= @billing_add.zip_code %>
+          </td>
+          <td>
+            <%= @message.content.titleize %>
+            <% if @message.content.empty? %>
+             no messages
+            <% end %>
+          </td>
+     </tr>
+
+    </tbody>
+  </table>
+
+  <%= render partial: "carts/cart", locals: {cart: user.current_cart}  %>
+
+   <span class="place_order_button"><%= button_to 'Place my Order', thank_you_path(current_user), data: { confirm: 'Confirm?' } %></span>
 
 
 </body>

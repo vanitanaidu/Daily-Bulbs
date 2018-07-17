@@ -1,9 +1,36 @@
-<% cart.line_products.each do |line_product| %>
-  <% if line_product.product.date_delivered == Date.today  %>
-    <%= line_product.product.name %> | <%= number_to_currency(line_product.product.price.to_f) %> | Quantity: <%= line_product.quantity %>
-  <% end %>
-<% end %>
-<br>
+
+    <table class="cart_table">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+
+      <tr>
+        <% cart.line_products.each do |line_product| %>
+          <% if line_product.product.date_delivered == Date.today %>
+        <td><%= image_tag("flowers/#{rand(9)}.jpg") %></td>
+        <td><%= line_product.product.name %></td>
+        <td><%= line_product.quantity%></td>
+        <td><%= number_to_currency(line_product.product.price.to_f) %></td>
+        <td><%= link_to "<span class='material-icons' style='font-size:32px;'>delete_outline</span>".html_safe, cart_path(cart), method: :delete, :data => {:confirm => 'This will empty everything in your cart. Are you sure?'}%></td>
+        <% end %>
+        <% end %>
+     </tr>
+  </tbody>
+</table>
 
 
-<p>Grand Total: <strong><%= number_to_currency(cart.total.to_f) %></strong></p>
+<table class="grand_total">
+  <thead>
+    <tr>
+      <th><strong>Grand Total:</strong></th>
+      <th><%= number_to_currency(cart.total.to_f) %></th>
+    </tr>
+  </thead>
+</table>

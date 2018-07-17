@@ -1,11 +1,11 @@
 
-    <br>
+
     <% if form.object.errors.any? %>
       <div class="field_with_errors">
-        <h2>
+        <h3>
           <%= pluralize(form.object.errors.count, "error") %>
           prevented your order from being processed:
-        </h2>
+        </h3>
         <ul>
         <% form.object.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -13,4 +13,4 @@
         </ul>
       </div>
     <% end %>
-    <br>
+<br>

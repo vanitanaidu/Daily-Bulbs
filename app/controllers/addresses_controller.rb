@@ -22,16 +22,17 @@ class AddressesController < ApplicationController
 
   def create
     if user.update(address_params)
-       flash[:notice] = "Your Order Was Successful"
-       @shipping_add = user.addresses.find_by(address_type: "Shipping")
-       @billing_add = user.addresses.find_by(address_type: "Billing")
+      #  flash[:notice] = "Your Order Was Successful"
+
+       @shipping_add = user.addresses[-2]
+       @billing_add = user.addresses[-1]
        @message = user.messages.last
 
-       render 'addresses/index', layout: false
-    else
+       render 'addresses/index', layout: false 
 
-      render :json => { :errors => user.errors.full_messages }, :status => 442
-            flash[:error] = "Sorry. Your Order Did Not Go Through. Please key in your address again."
+      else
+        render :json => { :errors => user.errors.full_messages }, :status => 442
+          flash[:error] = "Sorry. Your Order Did Not Go Through. Please key in your address again."
     end
   end
 

@@ -1,13 +1,11 @@
 
 <body class=center>
 
-    <h3> Delivery Address </h3>
-
-
     <%= form_for user, :url => user_addresses_path(user), method: :post do |f| %>
+      <h1 class="address_heading"> Delivery Address </h1>
 
       <%= f.fields_for :addresses do |address| %>
-    <% $add = address.object %>
+      <% $add = address.object %>
         <% if !address.object.id.present? %>
           <%= address.hidden_field :address_type %>
 
@@ -15,32 +13,32 @@
           <%= render partial: "form_errors", locals: {form: address} %>
 
 
-          <label><%= address.object.address_type %></label>
+          <label><strong><%= address.object.address_type %></strong></label>
           <fieldset>
-            <p>
-              <%= address.label :street_1 %>*
-              <%= address.text_field :street_1 %>
-            </p>
 
-            <p>
-              <%= address.label :street_2 %>
-              <%= address.text_field :street_2 %>
-            </p>
+            <p><%= address.label :street_1 %>* </p>
+            <p class="input_street_1"><%= address.text_field :street_1 %> </p>
 
-            <p>
+
+            <p><%= address.label :street_2 %></p>
+            <p class="input_street_2"><%= address.text_field :street_2 %></p>
+
+          </br>
+
+            <span class="city">
               <%= address.label :city %>*
               <%= address.text_field :city %>
-            </p>
+            </span>
 
-            <p>
+            <span class="state">
               <%= address.label :state %>*
               <%= address.text_field :state %>
-            </p>
+            </span>
 
-            <p>
+            <span class="zip_code">
               <%= address.label :zip_code %>*
               <%= address.text_field :zip_code %>
-            </p>
+            </span>
           </fieldset>
         <% end %>
       <% end %>
@@ -49,17 +47,16 @@
       <%= f.fields_for :messages do |message| %>
 
         <% if !message.object.id.present? %>
-          <label> Message to Recipient </label>
+          <label><strong>Message to Recipient</strong></label>
 
           <fieldset>
 
 
         <%= render partial: "form_errors", locals: {form: message} %>
 
-            <p>
-              <%= message.label :content %>
-              <%= message.text_area :content %>
-            </p>
+            <p><%= message.label :content %></p>
+            <p class="content"><%= message.text_area :content, placeholder: "Write a little note to your loved one...."%></p>
+
 
           </fieldset>
         <% end %>
@@ -68,7 +65,6 @@
         * required fields
         <br></br>
         <br>
-          <%= render partial: "carts/cart", locals: {cart: user.current_cart}  %>
         <br>
 
     <div id="review_order_button">  <%= f.submit "Review my Order" %> </div>

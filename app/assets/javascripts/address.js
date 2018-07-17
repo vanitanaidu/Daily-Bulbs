@@ -21,10 +21,11 @@ function submitAddress(form) {
   url: url,
   data: formData,
   success: function(response){
-
+    
     var response = response
 
     $("#address_form").html(response)
+
     $(".edit_user").hide()
   }
   ,error: function(error){

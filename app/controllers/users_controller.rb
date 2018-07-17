@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     cart.checkout
     cart.delete
     sign_out_and_redirect(current_user)
-    flash[:notice] = "Your order was submitted. Thank you for your business!"
+    flash[:notice] = "Thank you for your order! "
   end
 
   def show

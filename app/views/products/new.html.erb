@@ -1,38 +1,44 @@
 <body class=center>
+    <div class="container">
+  
+        <h1 class= "add_daily_pick_heading"> Add New Daily Pick</h1>
 
-  <%= form_for @product, html: { multipart: true } do |f| %>
+            <div class="add_daily_pick">
+              <%= form_for @product, html: { multipart: true } do |f| %>
 
-    <% if @product.errors.any? %>
-      <div class="field_with_errors">
-        <h2>
-          <%= pluralize(@product.errors.count, "error") %>
-          prevented this product from being created:
-        </h2>
+                <% if @product.errors.any? %>
+                  <div class="field_with_errors">
+                    <h2>
+                      <%= pluralize(@product.errors.count, "error") %>
+                      prevented this product from being created:
+                    </h2>
 
-        <ul>
-        <% @product.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-
-
-  <p> <%= f.label :name, "Name:" %>
-      <%= f.text_field :name %> </p>
-
-
-  <p> <%= f.label :description, "Description:" %>
-      <%= f.text_field :description %> </p>
+                    <ul>
+                    <% @product.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                <% end %>
 
 
-  <p> <%= f.label :date_delivered, "Delivery Day:" %>
-      <%= f.date_field :date_delivered, :value => Time.now.strftime("%B, %e, %Y") %> </p>
+                <div class="add_daily_pick_details">
+                  <span><%= f.label :name, "Name:" %></span>
+                  <span><%= f.text_field :name %> </span>
+
+
+                  <span><%= f.label :description, "Description:" %></span>
+                  <span><%= f.text_field :description %> </span>
+
+
+                  <span><%= f.label :date_delivered, "Delivery Day:" %></span>
+                  <span><%= f.date_field :date_delivered, :value => Time.now.strftime("%B, %e, %Y") %> </span>
+                </div>
 
 
 
-
-  <p> <%= f.submit "Create Flower" %> </p>
-  <% end %>
+                <div class="daily_pick_button"> <%= f.submit "Create Flower" %> </div>
+              <% end %>
+            </div>
+    </div>
 </body>
