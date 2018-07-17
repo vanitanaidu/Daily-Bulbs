@@ -1,6 +1,4 @@
 
-
-
 .review_order_table {
   margin-top: 5%;
   table-layout: fixed;
@@ -15,8 +13,9 @@
   text-transform: uppercase;
   color: #595959;
   padding: 5px;
-  margin-top: 5%;
+  margin-top: 15%;
   border-bottom: 1px solid #ddd;
+  letter-spacing: 1px;
 }
 
 .review_order_table thead {
@@ -29,13 +28,12 @@
   width: 40%;
   border-bottom: 1px solid #ddd;
   font-size: 150%;
-
+  color: #595959;
 }
 
  .review_order_table td {
     height: 20vh;
  }
-
 
 
 .place_order_button input[type=submit] {
@@ -46,4 +44,6 @@
   background-color: #ccffff;
   width: 40%;
   height: 30%;
+  text-transform: uppercase;
+  font-weight: bold;
 }

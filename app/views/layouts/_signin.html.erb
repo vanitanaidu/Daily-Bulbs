@@ -1,7 +1,7 @@
 
   <% if user_signed_in? %>
 
-    <li> <h2> <span class='material-icons'>tag_faces</span> <%=" #{current_user.email.split("@")[0]}!" %> </h2> </li>
+    <li> <h2 class="nav_email"> <span class='material-icons'>tag_faces</span> <%=" #{current_user.email.split("@")[0]}!" %> </h2> </li>
     <li> <h2><%= link_to "Log out", destroy_user_session_path, method: :delete %> </h2> </li>
   <% else %>
     <li> <h2> <%= link_to "Login", new_user_session_path%> </h2> </li>

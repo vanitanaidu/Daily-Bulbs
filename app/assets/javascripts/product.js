@@ -125,7 +125,7 @@ function cartButtons(cartID) {
           const id = line_product.cart.id
 
            $("#form").html("<a>" + "<div id='cart_ajax'>"  + "</div></a>")
-           $("#cart_ajax").append(upperName + " | " + `$${price}`+ " | " + "Quantity: " + quantity + "<br></br>")
+           $("#cart_ajax").append(upperName + " " + "|" + " " + `$${price}`+ " " + "|" + " " + "Quantity: " + quantity + "<br></br>")
 
 
            $("#my_cart_button").html("<a>" + "<button>" + "My Cart" + "</button>" + "</a>")

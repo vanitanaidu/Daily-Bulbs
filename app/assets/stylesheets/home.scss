@@ -1,18 +1,14 @@
-// Place all the styles related to the products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
 
 //nav bar
 .nav {
   list-style-type: none;
-   width: 100%;
+  width: 95%;
   overflow: hidden;
   z-index: 99999;
   margin:  0px 0px 20px 0px;
   background-color: #e6ffff;
-
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0;
 }
 
 ul li h2 {
@@ -25,10 +21,10 @@ ul li h2 {
 
 
 ul li h2 a {
-  color: #000000;
+    color: #595959;
   text-decoration: none;
   text-transform: uppercase;
-  color: black;
+  // color: black;
 }
 
 ul li h2 a:hover {
@@ -38,6 +34,10 @@ ul li h2 a:hover {
 
 .material-icons {
   font-size: 48px;
+}
+
+h2.nav_email {
+  color: #006666;
 }
 
 // logout link
@@ -50,16 +50,10 @@ ul li h2 a:hover {
   width: 100%;
   height: 80vh;
   object-fit: cover;
+  margin-top: 150px;
 }
 
 //index page
-.gallery_images img {
-  display: inline-block;
-  width: 80%;
-  height: 30vh;
-  object-fit: cover;
-}
-
 
 .container {
   position: relative;
@@ -71,7 +65,7 @@ ul li h2 a:hover {
   position: absolute;
   text-shadow: 0px 0px 8px #000, 1px 1px #000, 3px 3px #000;
   font-weight:900;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -91,13 +85,19 @@ h2.subheading {
   display: inline;
   width: 60%;
   font-size: 160%;
-  border: 3px solid grey;
-  background-color: #adafb2;
+  border: 2px solid #ddd;
   padding: 20px;
   margin-top: 5%;
   margin-bottom: 10%;
   background-color: #ccffff;
-  color: #333333;
+  color: #595959;
+  text-transform: uppercase;
+  font-weight: bold;
+  // letter-spacing: 1px;
+}
+
+.js-more_flowers:hover  {
+  border: 2px solid #999999;
 }
 
 h1 {
@@ -117,6 +117,7 @@ div.gallery img {
 div.desc {
     padding: 15px;
     text-align: center;
+    color: #595959;
 }
 
 * {
@@ -129,18 +130,18 @@ div.desc {
     width: 24.99999%;
 }
 
-@media only screen and (max-width: 700px) {
-    .responsive {
-        width: 49.99999%;
-        margin: 6px 0;
-    }
-}
+// @media only screen and (max-width: 700px) {
+//     .responsive {
+//         width: 49.99999%;
+//         margin: 6px 0;
+//     }
+// }
 
-@media only screen and (max-width: 500px) {
-    .responsive {
-        width: 100%;
-    }
-}
+// @media only screen and (max-width: 500px) {
+//     .responsive {
+//         width: 100%;
+//     }
+// }
 
 .clearfix:after {
     content: "";

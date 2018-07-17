@@ -4,8 +4,9 @@ h1.add_daily_pick_heading {
   text-transform: uppercase;
   color: #595959;
   padding: 5px;
-  margin-top: 5%;
+  margin-top: 15%;
   border-bottom: 1px solid #ddd;
+  letter-spacing: 1px;
 }
 
 .daily_pick_button input[type=submit] {
@@ -16,15 +17,21 @@ h1.add_daily_pick_heading {
     margin-bottom: 8%;
     margin-top: 8%;
     margin-right: 8%;
+    color: #595959;
     background-color: #ccffff;
-    border: 1px solid rgba(0, 0, 0, 0.6);
-    color: black;
+    letter-spacing: 1px;
+    border: 2px solid #ddd;
+}
+
+.daily_pick_button input[type=submit]:hover {
+  border: 2px solid #999999;
 }
 
 
 div.add_daily_pick_details {
-    margin-top: 10%;
-    margin-right: 7%;
+  margin-top: 10%;
+  margin-right: 7%;
+  color: #595959;
 }
 
 .add_daily_pick_details label {
@@ -36,4 +43,9 @@ div.add_daily_pick_details {
 .add_daily_pick_details input[type=text], .add_daily_pick_details input[type=date] {
   font-size: 16px;
   padding: 5px;
+
+}
+
+.add_daily_pick_details input[type=date] {
+    color: #595959;
 }

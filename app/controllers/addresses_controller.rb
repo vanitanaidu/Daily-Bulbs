@@ -28,7 +28,7 @@ class AddressesController < ApplicationController
        @billing_add = user.addresses[-1]
        @message = user.messages.last
 
-       render 'addresses/index', layout: false 
+       render 'addresses/index'
 
       else
         render :json => { :errors => user.errors.full_messages }, :status => 442

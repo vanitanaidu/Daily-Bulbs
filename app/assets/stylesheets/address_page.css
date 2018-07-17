@@ -4,13 +4,15 @@
   text-transform: uppercase;
   color: #595959;
   padding: 5px;
-  margin-top: 5%;
+  margin-top: 15%;
   border-bottom: 1px solid #ddd;
+  letter-spacing: 1px;
 }
 
 
 .edit_user label {
   font-size: 20px;
+  color: #595959;
 }
 
 fieldset {
@@ -33,6 +35,7 @@ fieldset input[type="text"] {
 
 .input_street_1 input, .input_street_2 input {
   width: 100%;
+
 }
 
 .city input, .state input,
@@ -49,6 +52,7 @@ fieldset input[type="text"] {
   margin-bottom: 2%
 }
 
+/*review my order button*/
 #review_order_button input {
   background-color: #ccffff;
   width: 50%;
@@ -58,4 +62,12 @@ fieldset input[type="text"] {
   text-align:center;
   padding: 10px;
   border: 2px solid #ddd;
+  color: #595959;
+  /*letter-spacing: 1px;*/
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#review_order_button input:hover {
+    border: 2px solid #999999;
 }

@@ -4,30 +4,40 @@ h1#daily_pick_title {
   text-transform: uppercase;
   color: #595959;
   padding: 5px;
-  margin-top: 5%;
+  margin-top: 15%;
   border-bottom: 1px solid #ddd;
+  letter-spacing: 1px;
 }
 
+  /* add to cart button*/
 .js-click_to_order {
   width: 25%;
   height: 50px;
   float: right;
   font-size: 120%;
-  margin-bottom: 5%;
   margin-top: 40px;
   margin-right: 16%;
   background-color: #ccffff;
   padding: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.6);
-  color: black;
+  border: 2px solid #ddd;
+  color: #595959;
+  /*letter-spacing: 1px;*/
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.js-click_to_order:hover {
+  border: 2px solid #999999;
 }
 
 .product {
   margin-right: 9%;
+  color: #595959;
 }
 
 h2.products {
   font-weight: normal;
+  text-transform: capitalize;
 }
 
 .daily_pick img {
@@ -37,6 +47,7 @@ h2.products {
   object-fit: cover;
   float: left;
   margin-left: 8%;
+  margin-top: 1px;
   padding: 26px;
   border: 3px solid rgba(0, 0, 0, 0.6);
 }
@@ -49,17 +60,24 @@ h2.products {
   padding: 10px;
 }
 
+/*button*/
 #new_line_product input[type="submit"] {
   font-size: 120%;
+  font-weight:normal;
   height: 50px;
   padding: 10px;
   background-color: #ccffff;
-  border: 1px solid grey;
-  color: black;
+  border: 2px solid #ddd;
+  color: #595959;
   margin-right: 8%;
+  /*letter-spacing: 1px;*/
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-
+#new_line_product input[type="submit"]:hover {
+    border: 2px solid #999999;
+}
 /*.cart input {
   width: 30%;
   padding: 1%;
@@ -71,7 +89,8 @@ h2.products {
 
 form.button_to {
   margin-top: 15%;
-  margin-left: 20%;*/
+  margin-left: 20%;
+
 }
 
 form input[type="submit"] {
@@ -79,4 +98,5 @@ form input[type="submit"] {
   font-size: 20px;
   size: 100px;
   padding: 5%;
+
 }

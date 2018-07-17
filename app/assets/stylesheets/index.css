@@ -4,6 +4,14 @@ h1.gallery_heading {
   text-transform: uppercase;
   color: #595959;
   padding: 5px;
-  margin-top: 5%;
+  margin-top: 15%;
   border-bottom: 1px solid #ddd;
+  letter-spacing: 1px;
+}
+
+.gallery_images img {
+  display: inline-block;
+  width: 80%;
+  height: 30vh;
+  object-fit: cover;
 }
