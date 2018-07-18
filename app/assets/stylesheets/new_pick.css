@@ -4,7 +4,7 @@ h1.add_daily_pick_heading {
   text-transform: uppercase;
   color: #595959;
   padding: 5px;
-  margin-top: 15%;
+  margin-top: 13%;
   border-bottom: 1px solid #ddd;
   letter-spacing: 1px;
 }
@@ -21,6 +21,8 @@ h1.add_daily_pick_heading {
     background-color: #ccffff;
     letter-spacing: 1px;
     border: 2px solid #ddd;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .daily_pick_button input[type=submit]:hover {
