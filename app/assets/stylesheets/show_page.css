@@ -21,7 +21,6 @@ h1#daily_pick_title {
   padding: 10px;
   border: 2px solid #ddd;
   color: #595959;
-  /*letter-spacing: 1px;*/
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -70,7 +69,6 @@ h2.products {
   border: 2px solid #ddd;
   color: #595959;
   margin-right: 8%;
-  /*letter-spacing: 1px;*/
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -78,19 +76,10 @@ h2.products {
 #new_line_product input[type="submit"]:hover {
     border: 2px solid #999999;
 }
-/*.cart input {
-  width: 30%;
-  padding: 1%;
-  font-size: 120%;
-  display: inline-block;
-  margin: 2%;
-  background-color: grey;
-}*/
 
 form.button_to {
   margin-top: 15%;
   margin-left: 20%;
-
 }
 
 form input[type="submit"] {
@@ -98,5 +87,4 @@ form input[type="submit"] {
   font-size: 20px;
   size: 100px;
   padding: 5%;
-
 }

@@ -9,7 +9,6 @@
   letter-spacing: 1px;
 }
 
-
 .edit_user label {
   font-size: 20px;
   color: #595959;
@@ -35,7 +34,6 @@ fieldset input[type="text"] {
 
 .input_street_1 input, .input_street_2 input {
   width: 100%;
-
 }
 
 .city input, .state input,
@@ -63,7 +61,6 @@ fieldset input[type="text"] {
   padding: 10px;
   border: 2px solid #ddd;
   color: #595959;
-  /*letter-spacing: 1px;*/
   text-transform: uppercase;
   font-weight: bold;
 }

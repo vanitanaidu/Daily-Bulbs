@@ -5,7 +5,6 @@ class Cart < ApplicationRecord
   has_many :line_products
   has_many :products, through: :line_products
 
-
   def total
     total = 0
     self.line_products.each do |line_product|

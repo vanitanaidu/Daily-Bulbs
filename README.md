@@ -19,4 +19,4 @@ This app is a online flower store. The user who has an admin role (in real life,
 
 
 ## Blog
- http://vanitanaidueckert.com/do_you_like_javascript
+https://vanitanaidu.github.io/do_you_like_javascript

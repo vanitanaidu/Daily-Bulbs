@@ -6,7 +6,6 @@
   margin-bottom: 4px;
 }
 
-
 .review_heading {
   text-align: left;
   font-weight: bold;
@@ -34,7 +33,6 @@
  .review_order_table td {
     height: 20vh;
  }
-
 
 .place_order_button input[type=submit] {
   font-size: 150%;

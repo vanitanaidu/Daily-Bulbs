@@ -35,8 +35,6 @@ color: black;
   width: 100%;
 }
 
-
-
 .signup-error{
   background: transparent;
   color: $brand-danger;
@@ -44,7 +42,6 @@ color: black;
 }
 
 input, select{
-
   background-color: $bg-danger;
   border-color: $brand-danger;
   color: $gray-base;
