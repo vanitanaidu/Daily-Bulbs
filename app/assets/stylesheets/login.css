@@ -1,9 +1,9 @@
 .form-2 {
-  width: 950px;
-  margin: 60px auto 30px;
-  padding: 15px;
+  width: 59.3em;
+  margin: 3.75em auto 1.87em;
+  padding: 0.937em;
   position: relative;
-  margin-top: 20%;
+  margin-top: 15%;
   background: #ffffff;
   border-radius: 4px;
   color: #7e7975;
@@ -14,7 +14,7 @@
 }
 
 .form-2 h1 {
-  font-size: 25px;
+  font-size: 1.56em;
   font-weight: bold;
   color: #bdb5aa;
   padding-bottom: 8px;
@@ -64,7 +64,7 @@
 .form-2 input[type=email],
 .form-2 input[type=password] {
   font-family: 'Lato', Calibri, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 0.81em;
   font-weight: 400;
   display: block;
   width: 100%;
@@ -100,7 +100,7 @@
 .form-2 input[type=submit],
 .form-2 .facbk_login {
   width:49%;
-  height: 48px;
+  height: 2.9em;
   float: left;
   position: relative;
   box-shadow: inset 0 1px rgba(255,255,255,0.3);
@@ -144,4 +144,10 @@
 .form-2 input[type=submit]:active,
 .form-2 .facbk_login:active {
   top: 1px;
+}
+
+.instruction {
+  line-height: 17%;
+  color: #6c6763;
+  margin-left: 22%;
 }
