@@ -12,10 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180902223505) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "addresses", id: :bigserial, force: :cascade do |t|
+  create_table "addresses", force: :cascade do |t|
     t.string   "street_1"
     t.string   "street_2"
     t.string   "city"
@@ -27,14 +24,14 @@ ActiveRecord::Schema.define(version: 20180902223505) do
     t.integer  "user_id"
   end
 
-  create_table "carts", id: :bigserial, force: :cascade do |t|
+  create_table "carts", force: :cascade do |t|
     t.string   "user_id"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
     t.string   "status",     default: "not submitted"
   end
 
-  create_table "line_products", id: :bigserial, force: :cascade do |t|
+  create_table "line_products", force: :cascade do |t|
     t.integer  "product_id"
     t.integer  "cart_id"
     t.datetime "created_at", null: false
@@ -42,25 +39,21 @@ ActiveRecord::Schema.define(version: 20180902223505) do
     t.integer  "quantity"
   end
 
-  create_table "messages", id: :bigserial, force: :cascade do |t|
+  create_table "messages", force: :cascade do |t|
     t.text    "content"
     t.integer "user_id"
   end
 
-  create_table "products", id: :bigserial, force: :cascade do |t|
+  create_table "products", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "date_delivered"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.integer  "price",              default: 30, null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "price",          default: 30, null: false
   end
 
-  create_table "users", id: :bigserial, force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "name"
     t.integer  "current_cart_id"
     t.string   "email",                  default: "",    null: false
@@ -78,10 +71,10 @@ ActiveRecord::Schema.define(version: 20180902223505) do
     t.boolean  "admin",                  default: false
     t.string   "provider"
     t.string   "uid"
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["provider"], name: "index_users_on_provider", using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-    t.index ["uid"], name: "index_users_on_uid", using: :btree
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["provider"], name: "index_users_on_provider"
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["uid"], name: "index_users_on_uid"
   end
 
 end
