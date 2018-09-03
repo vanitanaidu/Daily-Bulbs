@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :products
     resources :addresses
-      resources :messages
+    resources :messages
   end
 
 
