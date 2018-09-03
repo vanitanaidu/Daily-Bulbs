@@ -2,24 +2,8 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
 
-  # config.paperclip_defaults = {
-  #   storage: :s3,
-  #   s3_host_name: 's3-us-east-2.amazonaws.com',
-  #   s3_credentials: {
-  #     s3_region: ENV['AWS_REGION'],
-  #     bucket: ENV['AWS_S3_BUCKET'],
-  #     access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-  #     secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
-  #   }
-  # }
-
-
-  # config.paperclip_defaults = {
-  #   :storage => :s3,
-  #   :s3_host_name => 'http://bucket.s3.amazonaws.com'
-  #   :bucket => 'S3_BUCKET_NAME'
-  # }
-
+  config.serve_static_assets = true
+  config.assets.digest = true
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -43,7 +27,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
