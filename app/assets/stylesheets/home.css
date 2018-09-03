@@ -1,5 +1,5 @@
 
-//nav bar
+/*nav bar */
 .nav {
   list-style-type: none;
   width: 95%;
@@ -38,7 +38,7 @@ h2.nav_email {
   color: #006666;
 }
 
-// logout link
+/*logout link*/
 .logout {
   padding-right: 10%;
 }
@@ -51,7 +51,7 @@ h2.nav_email {
   margin-top: 145px;
 }
 
-//index page
+/*index page*/
 
 .container {
   position: relative;
@@ -78,7 +78,7 @@ h2.subheading {
   color: white;
 }
 
-//'more past flowers' button
+/*'more past flowers' button*/
 .js-more_flowers,  {
   display: inline;
   width: 60%;
