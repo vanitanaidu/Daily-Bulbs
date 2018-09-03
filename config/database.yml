@@ -1,19 +1,19 @@
 development:
   adapter: postgresql
-  database: trivia_boyz_api_development
+  database: daily_bulbs_api_development
   pool: 5
   timeout: 5000
-  
+
 
 test:
   adapter: postgresql
-  database: trivia_boyz_api_test
+  database: daily_bulbs_api_test
   pool: 5
   timeout: 5000
 
 
 production:
   adapter: postgresql
-  database: trivia_boyz_api_production
+  database: daily_bulbs_api_production
   pool: 5
   timeout: 5000

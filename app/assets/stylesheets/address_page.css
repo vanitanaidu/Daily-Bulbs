@@ -36,8 +36,7 @@ fieldset input[type="text"] {
   width: 100%;
 }
 
-.city input, .state input,
-.zip_code input {
+.city input, .state input, .zip_code input {
   width: 29%;
   margin-bottom: 2%;
 }

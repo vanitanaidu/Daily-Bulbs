@@ -79,7 +79,7 @@ h2.subheading {
 }
 
 /*'more past flowers' button*/
-.js-more_flowers,  {
+.js-more_flowers  {
   display: inline;
   width: 60%;
   font-size: 160%;
