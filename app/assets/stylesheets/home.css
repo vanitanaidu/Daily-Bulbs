@@ -70,7 +70,8 @@ h2.nav_email {
 }
 
 h1.welcomemsg {
-  font-size: 550%;
+  /*font-size: 550%;*/
+    font-size: 50%;
   color: white;
 }
 
